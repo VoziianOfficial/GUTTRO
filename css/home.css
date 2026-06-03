@@ -3853,3 +3853,227 @@ section.marquee-section .marquee-section__track a:hover svg {
         margin-left: 12px !important;
     }
 }
+
+/* ================================
+   HOME HERO — PHOTO BLOB INSTEAD OF PANEL
+================================ */
+
+section.home-hero#hero {
+    position: relative;
+    overflow: hidden;
+}
+
+section.home-hero#hero .home-hero__layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 500px) !important;
+    align-items: center !important;
+    gap: clamp(42px, 7vw, 96px) !important;
+}
+
+section.home-hero#hero .home-hero__content {
+    position: relative;
+    z-index: 5;
+    max-width: 820px;
+}
+
+/* полностью выключаем старую панель, если где-то осталась */
+section.home-hero#hero .home-hero__panel {
+    display: none !important;
+}
+
+/* большой неровный круг с фото */
+.home-hero__photo-blob {
+    position: relative;
+    isolation: isolate;
+    justify-self: end;
+    width: min(100%, 500px);
+    aspect-ratio: 1 / 1.04;
+    margin: 0;
+    padding: 13px;
+    border: 1px solid rgba(255, 122, 26, 0.34);
+    border-radius: 42% 58% 50% 50% / 54% 38% 62% 46%;
+    background:
+        radial-gradient(circle at 26% 18%, rgba(255, 255, 255, 0.18), transparent 28%),
+        linear-gradient(145deg, rgba(255, 122, 26, 0.24), rgba(255, 255, 255, 0.06));
+    box-shadow:
+        0 34px 100px rgba(0, 0, 0, 0.36),
+        0 0 0 12px rgba(255, 122, 26, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(18px);
+    overflow: visible;
+}
+
+/* свечение за фото */
+.home-hero__photo-blob::before {
+    content: "";
+    position: absolute;
+    inset: -34px;
+    z-index: -2;
+    border-radius: inherit;
+    background:
+        radial-gradient(circle at 74% 18%, rgba(255, 122, 26, 0.3), transparent 38%),
+        radial-gradient(circle at 18% 84%, rgba(18, 58, 90, 0.58), transparent 44%);
+    filter: blur(12px);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+/* блеск поверх фото */
+.home-hero__photo-blob::after {
+    content: "";
+    position: absolute;
+    inset: 13px;
+    z-index: 3;
+    border-radius: 42% 58% 50% 50% / 54% 38% 62% 46%;
+    background:
+        linear-gradient(115deg,
+            transparent 0 42%,
+            rgba(255, 255, 255, 0.18) 48%,
+            transparent 56% 100%);
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+.home-hero__photo-blob img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 42% 58% 50% 50% / 54% 38% 62% 46%;
+    filter: saturate(1.06) contrast(1.06);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+        0 22px 58px rgba(0, 0, 0, 0.3);
+}
+
+/* маленькие glass-плашки */
+.home-hero__photo-tag {
+    position: absolute;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 122, 26, 0.32);
+    border-radius: 999px;
+    color: var(--color-white);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.06)),
+        rgba(16, 18, 20, 0.66);
+    box-shadow:
+        0 16px 36px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(14px);
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.home-hero__photo-tag i,
+.home-hero__photo-tag svg {
+    width: 18px !important;
+    height: 18px !important;
+    color: var(--color-orange);
+    stroke-width: 2.2 !important;
+}
+
+.home-hero__photo-tag--top {
+    top: 48px;
+    left: -24px;
+}
+
+.home-hero__photo-tag--bottom {
+    right: -18px;
+    bottom: 70px;
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1023px) {
+    section.home-hero#hero .home-hero__layout {
+        grid-template-columns: 1fr !important;
+        gap: 42px !important;
+    }
+
+    section.home-hero#hero .home-hero__content {
+        max-width: 820px;
+    }
+
+    .home-hero__photo-blob {
+        justify-self: center;
+        width: min(100%, 500px);
+        aspect-ratio: 1 / 0.92;
+    }
+
+    .home-hero__photo-tag--top {
+        left: 20px;
+        top: 22px;
+    }
+
+    .home-hero__photo-tag--bottom {
+        right: 20px;
+        bottom: 24px;
+    }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 767px) {
+    section.home-hero#hero .home-hero__layout {
+        gap: 30px !important;
+    }
+
+    .home-hero__photo-blob {
+        width: min(100%, 370px);
+        aspect-ratio: 1 / 0.96;
+        padding: 9px;
+        border-radius: 38% 62% 48% 52% / 54% 40% 60% 46%;
+    }
+
+    .home-hero__photo-blob img,
+    .home-hero__photo-blob::after {
+        border-radius: 38% 62% 48% 52% / 54% 40% 60% 46%;
+    }
+
+    .home-hero__photo-blob::before {
+        inset: -22px;
+    }
+
+    .home-hero__photo-tag {
+        min-height: 36px;
+        padding: 8px 10px;
+        font-size: 11.5px;
+    }
+
+    .home-hero__photo-tag i,
+    .home-hero__photo-tag svg {
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+    .home-hero__photo-tag--top {
+        left: 10px;
+        top: 12px;
+    }
+
+    .home-hero__photo-tag--bottom {
+        right: 10px;
+        bottom: 14px;
+    }
+}
+
+@media (max-width: 420px) {
+    .home-hero__photo-blob {
+        width: min(100%, 320px);
+    }
+
+    .home-hero__photo-tag {
+        font-size: 11px;
+    }
+}
