@@ -1,0 +1,59 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="roofGradient" x1="12" y1="9" x2="52" y2="39" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#F8FAFC"/>
+            <stop offset="100%" stop-color="#C7D0D8"/>
+        </linearGradient>
+
+        <linearGradient id="gutterGradient" x1="11" y1="33" x2="54" y2="55" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FF9A45"/>
+            <stop offset="100%" stop-color="#FF7A1A"/>
+        </linearGradient>
+
+        <filter id="shadow" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.35"/>
+        </filter>
+    </defs>
+
+    <rect width="64" height="64" rx="18" fill="#101214"/>
+
+    <g filter="url(#shadow)">
+        <path
+            d="M12 31L32 14L52 31"
+            stroke="url(#roofGradient)"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M20 31L32 21L44 31"
+            stroke="#EEF1F4"
+            stroke-width="2.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            opacity="0.78"
+        />
+
+        <path
+            d="M14 37H47C50 37 52 39 52 42V49"
+            stroke="url(#gutterGradient)"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M52 49C52 54 48 57 44 57H41"
+            stroke="url(#gutterGradient)"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M36.5 51.5C36.5 48.8 39 46.8 41 43.8C43 46.8 45.5 48.8 45.5 51.5C45.5 54.5 43.5 56.5 41 56.5C38.5 56.5 36.5 54.5 36.5 51.5Z"
+            fill="#123A5A"
+        />
+    </g>
+</svg>

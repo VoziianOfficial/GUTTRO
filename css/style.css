@@ -1014,7 +1014,7 @@ li {
 .pipe-nav {
     position: fixed;
     top: 50%;
-    left: max(18px, calc((100vw - var(--container-wide)) / 2));
+    left: max(18px, calc((100vw - var(--container-wide)) / 5));
     z-index: 80;
     transform: translateY(-50%);
     display: grid;
