@@ -2317,3 +2317,13 @@ body {
         height: 38px !important;
     }
 }
+
+/* ================================
+   PIPE NAV — HIDE ON TABLET / MOBILE
+================================ */
+
+@media (max-width: 1023px) {
+    .pipe-nav {
+        display: none !important;
+    }
+}
