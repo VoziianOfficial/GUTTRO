@@ -55,7 +55,7 @@ window.SITE_CONFIG = {
         stormCta: 'assets/images/gutter-storm-cta.jpg',
         contact: 'assets/images/contact-gutters.jpg',
         about: 'assets/images/about-gutters.jpg',
-        servicesHero: 'assets/images/services-hero-gutters.jpg'
+        servicesHero: 'assets/images/services-hero.jpg'
     },
 
     services: [
