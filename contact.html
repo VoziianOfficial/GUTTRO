@@ -451,6 +451,52 @@
                 </div>
             </section>
 
+            <section class="pre-form-signal" aria-labelledby="pre-form-signal-title">
+                <div class="container-wide">
+                    <div class="pre-form-signal__inner">
+                        <div class="pre-form-signal__text">
+                            <p class="section-kicker">Ready to compare</p>
+            
+                            <h2 id="pre-form-signal-title">
+                                A few details can make the quote path clearer.
+                            </h2>
+            
+                            <p>
+                                Share the service category, ZIP code, timing, and visible gutter concern before requesting provider
+                                options.
+                            </p>
+                        </div>
+            
+                        <div class="pre-form-signal__points" aria-label="Helpful request details">
+                            <span>
+                                <i data-lucide="map-pin" aria-hidden="true"></i>
+                                ZIP code
+                            </span>
+            
+                            <span>
+                                <i data-lucide="list-checks" aria-hidden="true"></i>
+                                Service type
+                            </span>
+            
+                            <span>
+                                <i data-lucide="clock" aria-hidden="true"></i>
+                                Timing
+                            </span>
+            
+                            <span>
+                                <i data-lucide="droplets" aria-hidden="true"></i>
+                                Gutter concern
+                            </span>
+                        </div>
+            
+                        <a class="button button--primary pre-form-signal__button" href="#contact-form">
+                            Go to Form
+                            <i data-lucide="arrow-down" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
             <section class="contact-form-section section section--soft" id="contact-form"
                 aria-labelledby="contact-form-title">
                 <div class="container-wide">
@@ -521,16 +567,6 @@
                                     rows="4"></textarea>
                             </div>
 
-                            <label class="form-checkbox" for="consent">
-                                <input type="checkbox" id="consent" name="consent" required>
-                                <span class="form-checkbox__box" aria-hidden="true"></span>
-                                <span>
-                                    I agree that GUTTRO may use my submitted details to help organize a gutter provider
-                                    comparison request. I understand that providers are independent and GUTTRO does not
-                                    perform gutter work directly.
-                                </span>
-                            </label>
-
                             <p class="form-message form-message--success" data-form-success>
                                 Thanks! Your request has been prepared. A gutter provider comparison path can now be
                                 reviewed.
@@ -544,53 +580,73 @@
                                 Request Provider Options
                                 <i data-lucide="send" aria-hidden="true"></i>
                             </button>
-
-                            <p class="contact-form__small">
-                                By submitting, you can be contacted about gutter provider comparison options. Always
-                                verify provider license, insurance, and terms before hiring.
-                            </p>
                         </form>
                     </div>
                 </div>
             </section>
 
-            <section class="after-request section section--light" id="after-request"
-                aria-labelledby="after-request-title">
-                <div class="container">
-                    <div class="section-heading section-heading--center">
+        <section class="request-status-dark" id="after-request" aria-labelledby="after-request-title">
+            <div class="container-wide">
+                <div class="request-status-dark__layout">
+                    <div class="request-status-dark__intro">
                         <p class="section-kicker">After your request</p>
-
+        
                         <h2 id="after-request-title">
                             What happens after you submit the form?
                         </h2>
-
+        
                         <p>
-                            The process stays simple and comparison-focused, so homeowners can review options without
-                            guessing where to start.
+                            The process stays simple and comparison-focused, so homeowners can review options without guessing
+                            where to start.
                         </p>
+        
+                        <a class="button button--primary" href="#contact-form">
+                            Start Request
+                            <i data-lucide="arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
-
-                    <div class="after-request__flow" aria-label="After request process">
-                        <article>
-                            <i data-lucide="inbox" aria-hidden="true"></i>
-                            <h3>Request received</h3>
-                            <p>Your service interest and basic project details are organized.</p>
+        
+                    <div class="request-status-dark__board" aria-label="After request process">
+                        <article class="request-status-dark__item request-status-dark__item--one">
+                            <span class="request-status-dark__icon">
+                                <i data-lucide="inbox" aria-hidden="true"></i>
+                            </span>
+        
+                            <div>
+                                <small>Request step</small>
+                                <h3>Request received</h3>
+                                <p>Your service interest and basic project details are organized.</p>
+                            </div>
                         </article>
-
-                        <article>
-                            <i data-lucide="folder-search" aria-hidden="true"></i>
-                            <h3>Options reviewed</h3>
-                            <p>The request can be matched to relevant gutter comparison categories.</p>
+        
+                        <article class="request-status-dark__item request-status-dark__item--two">
+                            <span class="request-status-dark__icon">
+                                <i data-lucide="folder-search" aria-hidden="true"></i>
+                            </span>
+        
+                            <div>
+                                <small>Category step</small>
+                                <h3>Options reviewed</h3>
+                                <p>The request can be matched to relevant gutter comparison categories.</p>
+                            </div>
                         </article>
-
-                        <article>
-                            <i data-lucide="users" aria-hidden="true"></i>
-                            <h3>Provider path</h3>
-                            <p>You can compare provider options, scope, timing, and quote details.</p>
+        
+                        <article class="request-status-dark__item request-status-dark__item--three">
+                            <span class="request-status-dark__icon">
+                                <i data-lucide="users" aria-hidden="true"></i>
+                            </span>
+        
+                            <div>
+                                <small>Provider step</small>
+                                <h3>Provider path</h3>
+                                <p>You can compare provider options, scope, timing, and quote details.</p>
+                            </div>
                         </article>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
+
 
             <section class="contact-faq section section--soft" id="contact-faq" aria-labelledby="contact-faq-title">
                 <div class="container">
