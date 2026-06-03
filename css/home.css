@@ -2950,3 +2950,413 @@
         padding: 10px !important;
     }
 }
+
+/* ================================
+   PHOTO MOSAIC — DARK PREMIUM GALLERY
+================================ */
+
+.photo-mosaic {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: var(--color-white);
+    background:
+        radial-gradient(circle at 12% 18%, rgba(255, 122, 26, 0.18), transparent 30%),
+        radial-gradient(circle at 88% 76%, rgba(18, 58, 90, 0.5), transparent 36%),
+        linear-gradient(135deg, #101214 0%, #15191d 52%, #0b2438 100%) !important;
+}
+
+/* тонкая дорогая сетка на фоне */
+.photo-mosaic::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(circle at 55% 50%, black, transparent 78%);
+    pointer-events: none;
+}
+
+/* большой мягкий блеск */
+.photo-mosaic::after {
+    content: "";
+    position: absolute;
+    right: -180px;
+    bottom: -180px;
+    z-index: -1;
+    width: 540px;
+    height: 540px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, rgba(255, 122, 26, 0.2), transparent 66%);
+    filter: blur(4px);
+    pointer-events: none;
+}
+
+.photo-mosaic__layout {
+    position: relative;
+    z-index: 2;
+}
+
+.photo-mosaic .section-heading {
+    position: relative;
+    padding: clamp(22px, 3vw, 34px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 34px;
+    background:
+        radial-gradient(circle at 88% 12%, rgba(255, 122, 26, 0.14), transparent 34%),
+        rgba(255, 255, 255, 0.055);
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+}
+
+.photo-mosaic .section-kicker {
+    color: var(--color-orange);
+}
+
+.photo-mosaic .section-heading h2 {
+    color: var(--color-white);
+}
+
+.photo-mosaic .section-heading p {
+    color: rgba(199, 208, 216, 0.86);
+}
+
+/* gallery frame */
+.photo-mosaic__grid {
+    position: relative;
+    padding: 12px;
+    border: 1px solid rgba(255, 122, 26, 0.22);
+    border-radius: 46px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035)),
+        rgba(8, 9, 10, 0.5);
+    box-shadow:
+        0 32px 90px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+}
+
+/* тонкая линия-блеск сверху */
+.photo-mosaic__grid::before {
+    content: "";
+    position: absolute;
+    left: 34px;
+    right: 34px;
+    top: 12px;
+    z-index: 5;
+    height: 2px;
+    border-radius: 999px;
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 122, 26, 0.9),
+            rgba(255, 255, 255, 0.72),
+            rgba(255, 122, 26, 0.9),
+            transparent);
+    pointer-events: none;
+}
+
+/* photo item */
+.photo-mosaic__item {
+    border-color: rgba(255, 122, 26, 0.26) !important;
+    background: #101214 !important;
+    box-shadow:
+        0 20px 54px rgba(0, 0, 0, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base),
+        filter var(--transition-base);
+}
+
+/* hover shine */
+.photo-mosaic__item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    transform: translateX(-130%) skewX(-18deg);
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    pointer-events: none;
+    transition: transform 900ms ease;
+}
+
+/* darker premium overlay */
+.photo-mosaic__item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(180deg, rgba(16, 18, 20, 0.04), rgba(16, 18, 20, 0.78)),
+        linear-gradient(90deg, rgba(16, 18, 20, 0.5), rgba(16, 18, 20, 0.08));
+    pointer-events: none;
+}
+
+.photo-mosaic__item:hover {
+    transform: translateY(-7px);
+    border-color: rgba(255, 122, 26, 0.72) !important;
+    box-shadow:
+        0 30px 76px rgba(0, 0, 0, 0.44),
+        0 0 0 6px rgba(255, 122, 26, 0.055) !important;
+    filter: saturate(1.08);
+}
+
+.photo-mosaic__item:hover::before {
+    transform: translateX(130%) skewX(-18deg);
+}
+
+.photo-mosaic__item img {
+    filter: saturate(0.95) contrast(1.05);
+    transition:
+        transform 900ms ease,
+        filter 900ms ease;
+}
+
+.photo-mosaic__item:hover img {
+    transform: scale(1.075);
+    filter: saturate(1.12) contrast(1.08);
+}
+
+/* caption as glass label */
+.photo-mosaic__item figcaption {
+    left: 18px;
+    right: auto;
+    bottom: 18px;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    max-width: calc(100% - 36px);
+    min-height: 38px;
+    padding: 9px 13px;
+    border: 1px solid rgba(255, 122, 26, 0.28);
+    border-radius: 999px;
+    color: var(--color-white);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06)),
+        rgba(16, 18, 20, 0.58);
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.26),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+/* маленькая оранжевая точка перед подписью */
+.photo-mosaic__item figcaption::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: var(--color-orange);
+    box-shadow: 0 0 14px rgba(255, 122, 26, 0.72);
+}
+
+/* разные акценты по фото */
+.photo-mosaic__item--tall {
+    border-radius: 52px 128px 52px 52px !important;
+}
+
+.photo-mosaic__item--small {
+    border-radius: 34px !important;
+}
+
+.photo-mosaic__item--round {
+    border-radius: 999px 999px 999px 52px !important;
+}
+
+.photo-mosaic__item--wide {
+    border-radius: 128px 52px 52px 52px !important;
+}
+
+/* легкая асимметрия, чтобы было живее */
+.photo-mosaic__item--small:not(.photo-mosaic__item--round) {
+    transform: translateY(10px);
+}
+
+.photo-mosaic__item--small:not(.photo-mosaic__item--round):hover {
+    transform: translateY(2px);
+}
+
+.photo-mosaic__item--round {
+    transform: translateY(-4px);
+}
+
+.photo-mosaic__item--round:hover {
+    transform: translateY(-11px);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1023px) {
+    .photo-mosaic .section-heading {
+        max-width: 780px;
+    }
+
+    .photo-mosaic__grid {
+        border-radius: 38px;
+    }
+
+    .photo-mosaic__item--small:not(.photo-mosaic__item--round),
+    .photo-mosaic__item--round {
+        transform: none;
+    }
+
+    .photo-mosaic__item:hover,
+    .photo-mosaic__item--small:not(.photo-mosaic__item--round):hover,
+    .photo-mosaic__item--round:hover {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 767px) {
+    .photo-mosaic {
+        padding-top: 58px;
+        padding-bottom: 58px;
+    }
+
+    .photo-mosaic .section-heading {
+        padding: 24px;
+        border-radius: 30px;
+    }
+
+    .photo-mosaic__grid {
+        padding: 10px;
+        border-radius: 32px;
+    }
+
+    .photo-mosaic__grid::before {
+        left: 24px;
+        right: 24px;
+        top: 10px;
+    }
+
+    .photo-mosaic__item,
+    .photo-mosaic__item--tall,
+    .photo-mosaic__item--small,
+    .photo-mosaic__item--round,
+    .photo-mosaic__item--wide {
+        height: 250px;
+        border-radius: 28px !important;
+    }
+
+    .photo-mosaic__item figcaption {
+        left: 14px;
+        bottom: 14px;
+        max-width: calc(100% - 28px);
+        min-height: 34px;
+        padding: 8px 11px;
+        font-size: 12.5px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .photo-mosaic__item,
+    .photo-mosaic__item--tall,
+    .photo-mosaic__item--small,
+    .photo-mosaic__item--round,
+    .photo-mosaic__item--wide {
+        height: 230px;
+    }
+
+    .photo-mosaic .section-heading {
+        padding: 20px;
+    }
+}
+
+/* ================================
+   PHOTO MOSAIC — HOVER CLIP FIX
+================================ */
+
+.photo-mosaic__item {
+    overflow: hidden !important;
+    contain: paint;
+    isolation: isolate;
+}
+
+.photo-mosaic__item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: center;
+    will-change: transform;
+}
+
+/* чтобы фото не вылезало из скруглений */
+.photo-mosaic__item,
+.photo-mosaic__item img {
+    backface-visibility: hidden;
+}
+
+/* убираем слишком сильный вылет самой карточки */
+.photo-mosaic__item:hover {
+    transform: translateY(-4px) !important;
+}
+
+/* фото увеличивается мягче и остается внутри рамки */
+.photo-mosaic__item:hover img {
+    transform: scale(1.045) !important;
+}
+
+/* для круглой/широкой карточки тоже без вылета */
+.photo-mosaic__item--small:not(.photo-mosaic__item--round):hover,
+.photo-mosaic__item--round:hover {
+    transform: translateY(-4px) !important;
+}
+
+/* ================================
+   PHOTO MOSAIC — TOP SHINE SAFE FIX
+================================ */
+
+/* делаем внутри галереи безопасную верхнюю зону под блеск */
+.photo-mosaic__grid {
+    position: relative;
+    isolation: isolate;
+    padding-top: 24px !important;
+    overflow: hidden !important;
+}
+
+/* блеск всегда выше карточек */
+.photo-mosaic__grid::before {
+    z-index: 30 !important;
+    top: 12px !important;
+    pointer-events: none;
+}
+
+/* карточки ниже линии */
+.photo-mosaic__item {
+    position: relative;
+    z-index: 2;
+}
+
+/* на hover не даём верхним карточкам залезать на линию */
+.photo-mosaic__item:hover,
+.photo-mosaic__item--small:not(.photo-mosaic__item--round):hover,
+.photo-mosaic__item--round:hover {
+    z-index: 4;
+    transform: translateY(0) !important;
+}
+
+/* оставляем движение только внутри фото, без выезда всей карточки */
+.photo-mosaic__item:hover img {
+    transform: scale(1.045) !important;
+}
