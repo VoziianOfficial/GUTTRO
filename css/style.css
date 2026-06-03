@@ -2328,3 +2328,844 @@ body {
     }
 }
 
+/* =========================================================
+   MODEL PIPE BOARD — NEW DARK DESIGN
+   no old about-model classes, no circles, no timeline rail
+========================================================= */
+
+.model-pipe-board {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(58px, 7vw, 96px) 0;
+    color: var(--color-white);
+    background:
+        radial-gradient(circle at 10% 16%, rgba(255, 122, 26, 0.22), transparent 30%),
+        radial-gradient(circle at 90% 82%, rgba(18, 58, 90, 0.62), transparent 36%),
+        linear-gradient(135deg, #101214 0%, #15191d 50%, #0b2438 100%);
+}
+
+.model-pipe-board::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 76px 76px;
+    mask-image: radial-gradient(circle at 52% 46%, black, transparent 78%);
+    pointer-events: none;
+}
+
+.model-pipe-board::after {
+    content: "FLOW";
+    position: absolute;
+    right: -0.08em;
+    bottom: -0.2em;
+    z-index: -1;
+    color: rgba(255, 255, 255, 0.035);
+    font-size: clamp(8rem, 20vw, 22rem);
+    font-weight: 950;
+    line-height: 0.8;
+    letter-spacing: -0.12em;
+    pointer-events: none;
+}
+
+.model-pipe-board__layout {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(280px, 0.42fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(38px, 7vw, 110px);
+}
+
+.model-pipe-board__intro {
+    max-width: 560px;
+}
+
+.model-pipe-board__intro .section-kicker {
+    color: var(--color-orange);
+}
+
+.model-pipe-board__intro h2 {
+    margin: 0 0 18px;
+    color: var(--color-white);
+    font-size: clamp(2.4rem, 5vw, 4.85rem);
+    line-height: 0.96;
+    letter-spacing: -0.08em;
+}
+
+.model-pipe-board__intro p {
+    margin: 0;
+    color: rgba(199, 208, 216, 0.86);
+    font-size: clamp(1rem, 1.25vw, 1.08rem);
+    line-height: 1.62;
+}
+
+/* right side — pipe routes */
+
+.model-pipe-board__routes {
+    display: grid;
+    gap: 14px;
+}
+
+.model-pipe-route {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 72px;
+    align-items: center;
+    gap: 22px;
+    min-height: 108px;
+    padding: 18px 20px 18px 28px;
+    overflow: hidden;
+
+    /* this is a pipe, not a card */
+    border: 1px solid rgba(255, 122, 26, 0.22);
+    border-radius: 999px 34px 34px 999px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035)),
+        rgba(255, 255, 255, 0.035);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 18px 48px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(14px);
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        background var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.model-pipe-route:nth-child(2) {
+    margin-left: 52px;
+}
+
+.model-pipe-route:nth-child(3) {
+    margin-left: 104px;
+}
+
+.model-pipe-route:nth-child(4) {
+    margin-left: 156px;
+}
+
+.model-pipe-route::before {
+    content: "";
+    position: absolute;
+    left: 22px;
+    right: 92px;
+    top: 50%;
+    z-index: -1;
+    height: 9px;
+    transform: translateY(-50%);
+    border-radius: 999px;
+    background:
+        linear-gradient(90deg,
+            rgba(255, 122, 26, 0.12),
+            rgba(255, 122, 26, 0.5),
+            rgba(255, 255, 255, 0.22),
+            transparent);
+    opacity: 0.75;
+}
+
+.model-pipe-route::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: translateX(-120%) skewX(-18deg);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    transition: transform 760ms ease;
+}
+
+.model-pipe-route:hover {
+    transform: translateX(8px);
+    border-color: rgba(255, 122, 26, 0.58);
+    background:
+        radial-gradient(circle at 94% 50%, rgba(255, 122, 26, 0.18), transparent 28%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.045));
+    box-shadow:
+        0 24px 62px rgba(0, 0, 0, 0.28),
+        0 0 0 6px rgba(255, 122, 26, 0.045),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.model-pipe-route:hover::after {
+    transform: translateX(120%) skewX(-18deg);
+}
+
+.model-pipe-route span {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--color-white);
+    font-size: clamp(1.12rem, 1.65vw, 1.42rem);
+    font-weight: 950;
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+}
+
+.model-pipe-route p {
+    max-width: 680px;
+    margin: 0;
+    color: rgba(199, 208, 216, 0.82);
+    font-size: 14px;
+    line-height: 1.48;
+}
+
+.model-pipe-route i,
+.model-pipe-route svg {
+    justify-self: end;
+    width: 58px !important;
+    height: 58px !important;
+    padding: 15px;
+    border: 1px solid rgba(255, 122, 26, 0.36);
+    border-radius: 50%;
+    color: var(--color-orange);
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.22), transparent 36%),
+        rgba(16, 18, 20, 0.62);
+    box-shadow:
+        0 16px 36px rgba(0, 0, 0, 0.26),
+        0 0 0 7px rgba(255, 122, 26, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    stroke-width: 2.1 !important;
+    transition:
+        transform var(--transition-base),
+        color var(--transition-base),
+        background var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.model-pipe-route:hover i,
+.model-pipe-route:hover svg {
+    transform: translateX(4px) rotate(-5deg);
+    color: var(--color-white);
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.3), transparent 36%),
+        linear-gradient(145deg, var(--color-orange-hover), var(--color-orange-dark));
+    box-shadow:
+        0 18px 42px rgba(217, 94, 0, 0.24),
+        0 0 0 9px rgba(255, 122, 26, 0.11),
+        0 0 28px rgba(255, 122, 26, 0.34);
+}
+
+/* tablet */
+
+@media (max-width: 1023px) {
+    .model-pipe-board__layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .model-pipe-board__intro {
+        max-width: 780px;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .model-pipe-board__routes {
+        max-width: 860px;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .model-pipe-route:nth-child(2),
+    .model-pipe-route:nth-child(3),
+    .model-pipe-route:nth-child(4) {
+        margin-left: 0;
+    }
+
+    .model-pipe-route:nth-child(even) {
+        margin-left: 44px;
+    }
+}
+
+/* mobile */
+
+@media (max-width: 767px) {
+    .model-pipe-board {
+        padding: 48px 0 54px;
+    }
+
+    .model-pipe-board__layout {
+        gap: 28px;
+    }
+
+    .model-pipe-board__intro h2 {
+        font-size: clamp(2rem, 10vw, 2.75rem);
+    }
+
+    .model-pipe-board__intro p {
+        font-size: 14px;
+    }
+
+    .model-pipe-board__routes {
+        gap: 10px;
+    }
+
+    .model-pipe-route,
+    .model-pipe-route:nth-child(even) {
+        grid-template-columns: minmax(0, 1fr) 52px;
+        gap: 12px;
+        min-height: 0;
+        margin-left: 0;
+        padding: 16px 14px 16px 18px;
+        border-radius: 26px;
+    }
+
+    .model-pipe-route::before {
+        display: none;
+    }
+
+    .model-pipe-route:hover {
+        transform: translateY(-3px);
+    }
+
+    .model-pipe-route span {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .model-pipe-route p {
+        font-size: 12.8px;
+        line-height: 1.42;
+    }
+
+    .model-pipe-route i,
+    .model-pipe-route svg {
+        width: 46px !important;
+        height: 46px !important;
+        padding: 12px;
+    }
+}
+
+/* =========================================================
+   MODEL PIPE BOARD — PREMIUM ROUTE MAP VERSION
+========================================================= */
+
+.model-pipe-board {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(58px, 7vw, 94px) 0;
+    color: var(--color-white);
+    background:
+        radial-gradient(circle at 8% 18%, rgba(255, 122, 26, 0.18), transparent 30%),
+        radial-gradient(circle at 92% 78%, rgba(18, 58, 90, 0.6), transparent 38%),
+        linear-gradient(135deg, #0c0e10 0%, #15191d 52%, #0b2438 100%);
+}
+
+.model-pipe-board::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 78px 78px;
+    mask-image: radial-gradient(circle at 52% 46%, black, transparent 78%);
+    pointer-events: none;
+}
+
+.model-pipe-board::after {
+    content: "";
+    position: absolute;
+    right: -180px;
+    bottom: -190px;
+    width: 560px;
+    height: 560px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 122, 26, 0.18), transparent 66%);
+    pointer-events: none;
+}
+
+.model-pipe-board__layout {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(280px, 0.42fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(38px, 7vw, 110px);
+}
+
+/* LEFT TEXT */
+
+.model-pipe-board__intro {
+    max-width: 560px;
+}
+
+.model-pipe-board__intro .section-kicker {
+    color: var(--color-orange);
+}
+
+.model-pipe-board__intro h2 {
+    margin: 0 0 18px;
+    color: var(--color-white);
+    font-size: clamp(2.4rem, 5vw, 4.85rem);
+    line-height: 0.96;
+    letter-spacing: -0.08em;
+}
+
+.model-pipe-board__intro p {
+    margin: 0;
+    color: rgba(199, 208, 216, 0.86);
+    font-size: clamp(1rem, 1.25vw, 1.08rem);
+    line-height: 1.62;
+}
+
+/* RIGHT ROUTE MAP */
+
+.model-pipe-board__routes {
+    position: relative;
+    display: grid;
+    gap: 0;
+    padding: 18px 0;
+}
+
+/* большая мягкая труба/линия справа */
+.model-pipe-board__routes::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    right: 34px;
+    bottom: 28px;
+    width: 14px;
+    border-radius: 999px;
+    background:
+        linear-gradient(180deg,
+            rgba(255, 122, 26, 0.12),
+            rgba(255, 122, 26, 0.88),
+            rgba(18, 58, 90, 0.78),
+            rgba(255, 122, 26, 0.88),
+            rgba(255, 122, 26, 0.12));
+    box-shadow:
+        0 0 30px rgba(255, 122, 26, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* rows теперь не выглядят карточками */
+.model-pipe-route {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 76px;
+    align-items: center;
+    gap: 22px;
+    min-height: 104px;
+    padding: 18px 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+    backdrop-filter: none;
+    transition: transform var(--transition-base);
+}
+
+.model-pipe-route:nth-child(2),
+.model-pipe-route:nth-child(3),
+.model-pipe-route:nth-child(4) {
+    margin-left: 0;
+}
+
+.model-pipe-route:nth-child(even) {
+    transform: translateX(34px);
+}
+
+.model-pipe-route:hover {
+    transform: translateX(10px);
+}
+
+.model-pipe-route:nth-child(even):hover {
+    transform: translateX(44px);
+}
+
+/* горизонтальная pipe-линия внутри строки */
+.model-pipe-route::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 72px;
+    top: 50%;
+    z-index: -1;
+    height: 2px;
+    transform: translateY(-50%);
+    border-radius: 999px;
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 122, 26, 0.78),
+            rgba(255, 255, 255, 0.22),
+            rgba(255, 122, 26, 0.36));
+    opacity: 0.9;
+}
+
+.model-pipe-route::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 72px;
+    bottom: 12px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent);
+}
+
+/* текстовая зона без карточки, но с лёгким свечением */
+.model-pipe-route div {
+    position: relative;
+    min-width: 0;
+    padding: 0 18px 0 0;
+}
+
+.model-pipe-route div::before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: var(--color-orange);
+    box-shadow: 0 0 18px rgba(255, 122, 26, 0.78);
+}
+
+.model-pipe-route span {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--color-white);
+    font-size: clamp(1.16rem, 1.75vw, 1.5rem);
+    font-weight: 950;
+    line-height: 1.04;
+    letter-spacing: -0.05em;
+}
+
+.model-pipe-route p {
+    max-width: 680px;
+    margin: 0;
+    color: rgba(199, 208, 216, 0.82);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* иконки как узлы на правой трубе */
+.model-pipe-route i,
+.model-pipe-route svg {
+    position: relative;
+    z-index: 2;
+    justify-self: end;
+    width: 62px !important;
+    height: 62px !important;
+    padding: 16px;
+    border: 1px solid rgba(255, 122, 26, 0.38);
+    border-radius: 50%;
+    color: var(--color-orange);
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.24), transparent 36%),
+        rgba(16, 18, 20, 0.86);
+    box-shadow:
+        0 16px 36px rgba(0, 0, 0, 0.3),
+        0 0 0 7px rgba(255, 122, 26, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    stroke-width: 2.1 !important;
+    transition:
+        transform var(--transition-base),
+        color var(--transition-base),
+        background var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.model-pipe-route:hover i,
+.model-pipe-route:hover svg {
+    transform: scale(1.08) rotate(-5deg);
+    color: var(--color-white);
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.3), transparent 36%),
+        linear-gradient(145deg, var(--color-orange-hover), var(--color-orange-dark));
+    box-shadow:
+        0 20px 46px rgba(217, 94, 0, 0.26),
+        0 0 0 9px rgba(255, 122, 26, 0.12),
+        0 0 30px rgba(255, 122, 26, 0.38);
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1023px) {
+    .model-pipe-board__layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .model-pipe-board__intro {
+        max-width: 780px;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .model-pipe-board__routes {
+        max-width: 860px;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .model-pipe-route:nth-child(even),
+    .model-pipe-route:nth-child(even):hover,
+    .model-pipe-route:hover {
+        transform: none;
+    }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 767px) {
+    .model-pipe-board {
+        padding: 48px 0 54px;
+    }
+
+    .model-pipe-board__layout {
+        gap: 28px;
+    }
+
+    .model-pipe-board__intro h2 {
+        font-size: clamp(2rem, 10vw, 2.75rem);
+    }
+
+    .model-pipe-board__intro p {
+        font-size: 14px;
+    }
+
+    .model-pipe-board__routes {
+        gap: 0;
+        padding: 0;
+    }
+
+    .model-pipe-board__routes::before {
+        right: 23px;
+        top: 28px;
+        bottom: 28px;
+        width: 8px;
+    }
+
+    .model-pipe-route {
+        grid-template-columns: minmax(0, 1fr) 54px;
+        gap: 12px;
+        min-height: 108px;
+        padding: 15px 0;
+    }
+
+    .model-pipe-route::before {
+        right: 58px;
+        opacity: 0.55;
+    }
+
+    .model-pipe-route::after {
+        right: 58px;
+        bottom: 0;
+    }
+
+    .model-pipe-route div::before {
+        left: -10px;
+        width: 6px;
+        height: 6px;
+    }
+
+    .model-pipe-route span {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .model-pipe-route p {
+        font-size: 12.8px;
+        line-height: 1.42;
+    }
+
+    .model-pipe-route i,
+    .model-pipe-route svg {
+        width: 48px !important;
+        height: 48px !important;
+        padding: 12px;
+    }
+}
+
+/* =========================================================
+   MODEL PIPE BOARD — REMOVE SQUARE HOVER CARD
+========================================================= */
+
+.model-pipe-route,
+.model-pipe-route:hover,
+.model-pipe-route:nth-child(even),
+.model-pipe-route:nth-child(even):hover {
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+/* убираем квадратный блик, который выглядит как карточка */
+.model-pipe-route::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* hover теперь только мягкое движение строки */
+.model-pipe-route:hover {
+    transform: translateX(8px) !important;
+}
+
+/* если четные строки были смещены — сохраняем красиво */
+.model-pipe-route:nth-child(even) {
+    transform: translateX(34px) !important;
+}
+
+.model-pipe-route:nth-child(even):hover {
+    transform: translateX(42px) !important;
+}
+
+/* линия внутри строки становится ярче при hover */
+.model-pipe-route::before {
+    transition:
+        opacity var(--transition-base),
+        filter var(--transition-base),
+        height var(--transition-base) !important;
+}
+
+.model-pipe-route:hover::before {
+    height: 3px !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 14px rgba(255, 122, 26, 0.65));
+}
+
+/* точка возле текста красиво светится */
+.model-pipe-route div::before {
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base),
+        background var(--transition-base) !important;
+}
+
+.model-pipe-route:hover div::before {
+    transform: translateY(-50%) scale(1.45) !important;
+    background: var(--color-orange) !important;
+    box-shadow:
+        0 0 0 6px rgba(255, 122, 26, 0.12),
+        0 0 22px rgba(255, 122, 26, 0.9) !important;
+}
+
+/* текст без карточки, просто подсветка */
+.model-pipe-route span {
+    transition: color var(--transition-base);
+}
+
+.model-pipe-route:hover span {
+    color: var(--color-orange-hover) !important;
+}
+
+/* иконка остается главным hover-акцентом */
+.model-pipe-route:hover i,
+.model-pipe-route:hover svg {
+    transform: scale(1.08) rotate(-5deg) !important;
+    color: var(--color-white) !important;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.3), transparent 36%),
+        linear-gradient(145deg, var(--color-orange-hover), var(--color-orange-dark)) !important;
+    box-shadow:
+        0 20px 46px rgba(217, 94, 0, 0.26),
+        0 0 0 9px rgba(255, 122, 26, 0.12),
+        0 0 30px rgba(255, 122, 26, 0.38) !important;
+}
+
+/* mobile: без бокового сдвига, чтобы не дергалось */
+@media (max-width: 767px) {
+
+    .model-pipe-route,
+    .model-pipe-route:hover,
+    .model-pipe-route:nth-child(even),
+    .model-pipe-route:nth-child(even):hover {
+        transform: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: 0 !important;
+    }
+
+    .model-pipe-route:hover::before {
+        height: 2px !important;
+    }
+}
+
+/* =========================================================
+   MODEL PIPE BOARD — MORE SPACE FOR TITLE
+========================================================= */
+
+.model-pipe-board__layout {
+    grid-template-columns: minmax(420px, 0.62fr) minmax(360px, 0.78fr) !important;
+    gap: clamp(34px, 5vw, 76px) !important;
+}
+
+.model-pipe-board__intro {
+    max-width: 720px !important;
+}
+
+.model-pipe-board__intro h2 {
+    max-width: 720px !important;
+}
+
+.model-pipe-board__intro p {
+    max-width: 600px !important;
+}
+
+/* правый блок делаем уже */
+.model-pipe-board__routes {
+    max-width: 720px !important;
+    justify-self: end !important;
+    width: 100% !important;
+}
+
+/* чтобы правые строки не растягивались слишком широко */
+.model-pipe-route p {
+    max-width: 520px !important;
+}
+
+/* смещения делаем мягче, чтобы блок не разъезжался вправо */
+.model-pipe-route:nth-child(even) {
+    transform: translateX(22px) !important;
+}
+
+.model-pipe-route:nth-child(even):hover {
+    transform: translateX(30px) !important;
+}
+
+/* TABLET */
+@media (max-width: 1023px) {
+    .model-pipe-board__layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .model-pipe-board__intro {
+        max-width: 780px !important;
+        margin-inline: auto !important;
+        text-align: center !important;
+    }
+
+    .model-pipe-board__intro h2,
+    .model-pipe-board__intro p {
+        margin-inline: auto !important;
+    }
+
+    .model-pipe-board__routes {
+        max-width: 820px !important;
+        justify-self: center !important;
+    }
+
+    .model-pipe-route:nth-child(even),
+    .model-pipe-route:nth-child(even):hover {
+        transform: none !important;
+    }
+}
