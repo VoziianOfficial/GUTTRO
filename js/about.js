@@ -4,8 +4,8 @@
     const guttro = window.GUTTRO || {};
 
     const storyItems = document.querySelectorAll('.about-story__visual article');
-    const modelItems = document.querySelectorAll('.about-model__path article');
-    const clarityItems = document.querySelectorAll('.about-clarity__grid article');
+    const modelItems = document.querySelectorAll('.model-pipe-route');
+    const questionItems = document.querySelectorAll('.about-question');
     const processRows = document.querySelectorAll('.about-process__rows article');
 
     const addIndexAttributes = (items, attributeName) => {
@@ -18,7 +18,7 @@
         const elements = [
             ...storyItems,
             ...modelItems,
-            ...clarityItems,
+            ...questionItems,
             ...processRows
         ];
 
@@ -56,7 +56,7 @@
     const init = () => {
         addIndexAttributes(storyItems, 'data-story-item');
         addIndexAttributes(modelItems, 'data-model-item');
-        addIndexAttributes(clarityItems, 'data-clarity-item');
+        addIndexAttributes(questionItems, 'data-question-item');
         addIndexAttributes(processRows, 'data-process-row');
 
         initPointerMovement();
