@@ -539,7 +539,7 @@
     display: grid;
     gap: 10px;
     max-width: 360px;
-    padding: clamp(22px, 3vw, 34px);
+    padding: clamp(22px, 3vw, 41px);
 }
 
 .service-photo-card__content i {
@@ -564,8 +564,8 @@
 
 .service-photo-card__arrow {
     position: absolute;
-    right: 24px;
-    bottom: 24px;
+    right: 54px;
+    bottom: 44px;
     z-index: 2;
     display: grid;
     place-items: center;
@@ -3360,3 +3360,4 @@
 .photo-mosaic__item:hover img {
     transform: scale(1.045) !important;
 }
+
