@@ -1895,3 +1895,388 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
         bottom: 14px;
     }
 }
+
+/* ================================
+   SERVICES CARDS — SPLIT PHOTO / TEXT LAYOUT
+================================ */
+
+.services-cards-section {
+    position: relative;
+    overflow: hidden;
+    padding-top: clamp(58px, 7vw, 94px) !important;
+    padding-bottom: clamp(58px, 7vw, 94px) !important;
+    background:
+        radial-gradient(circle at 10% 18%, rgba(255, 122, 26, 0.18), transparent 30%),
+        radial-gradient(circle at 92% 82%, rgba(18, 58, 90, 0.42), transparent 34%),
+        linear-gradient(135deg, #101214 0%, #15191d 52%, #0b2438 100%) !important;
+}
+
+.services-cards-section .section-heading {
+    position: relative;
+    z-index: 2;
+    margin-bottom: clamp(32px, 4vw, 52px);
+}
+
+.services-cards-grid {
+    position: relative;
+    z-index: 2;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+}
+
+/* каждая услуга = строка из двух отдельных карточек */
+.services-card,
+.services-card:nth-child(1),
+.services-card:nth-child(2),
+.services-card:nth-child(3),
+.services-card:nth-child(4) {
+    position: relative !important;
+    isolation: isolate;
+    display: grid !important;
+    grid-template-columns: minmax(260px, 0.48fr) minmax(0, 0.52fr) !important;
+    gap: 18px !important;
+    min-height: 260px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    color: var(--color-white);
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    transform: none !important;
+}
+
+/* чётные строки наоборот: текст слева, фото справа */
+.services-card:nth-child(even) {
+    grid-template-columns: minmax(0, 0.52fr) minmax(260px, 0.48fr) !important;
+}
+
+.services-card:nth-child(even) .services-card__image {
+    order: 2;
+}
+
+.services-card:nth-child(even) .services-card__content {
+    order: 1;
+}
+
+/* отключаем старые overlay/shine на общей карточке */
+.services-card::before,
+.services-card::after {
+    display: none !important;
+    content: none !important;
+}
+
+.services-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* ФОТО-КАРТОЧКА */
+.services-card__image {
+    position: relative !important;
+    inset: auto !important;
+    z-index: 1 !important;
+    display: block !important;
+    min-height: 300px !important;
+    width: 100% !important;
+    border: 1px solid rgba(255, 122, 26, 0.28);
+    border-radius: 36px !important;
+    background-position: center !important;
+    background-size: cover !important;
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transform: none !important;
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        filter var(--transition-base);
+}
+
+.services-card__image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(16, 18, 20, 0.05), rgba(16, 18, 20, 0.48)),
+        radial-gradient(circle at 86% 14%, rgba(255, 122, 26, 0.18), transparent 34%);
+    pointer-events: none;
+}
+
+.services-card__image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-130%) skewX(-18deg);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: transform 850ms ease;
+    pointer-events: none;
+}
+
+.services-card:hover .services-card__image {
+    transform: translateY(-4px) !important;
+    border-color: rgba(255, 122, 26, 0.72);
+    filter: saturate(1.08) contrast(1.05);
+}
+
+.services-card:hover .services-card__image::after {
+    transform: translateX(130%) skewX(-18deg);
+}
+
+/* разные формы фото, но без съедания контента */
+.services-card:nth-child(1) .services-card__image {
+    border-radius: 44px 96px 44px 44px !important;
+}
+
+.services-card:nth-child(2) .services-card__image {
+    border-radius: 96px 44px 44px 44px !important;
+}
+
+.services-card:nth-child(3) .services-card__image {
+    border-radius: 44px 44px 44px 96px !important;
+}
+
+.services-card:nth-child(4) .services-card__image {
+    border-radius: 44px 44px 96px 44px !important;
+}
+
+/* ТЕКСТОВАЯ КАРТОЧКА */
+.services-card__content {
+    position: relative !important;
+    z-index: 2 !important;
+    display: grid !important;
+    align-content: center !important;
+    gap: 14px !important;
+    width: 100% !important;
+    min-height: 300px !important;
+    margin: 0 !important;
+    padding: clamp(26px, 4vw, 42px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 36px !important;
+    color: var(--color-white);
+    background:
+        radial-gradient(circle at 90% 12%, rgba(255, 122, 26, 0.15), transparent 34%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.04)),
+        rgba(8, 9, 10, 0.44);
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    overflow: hidden;
+}
+
+/* декоративная линия снизу */
+.services-card__content::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    bottom: 24px;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-orange), transparent);
+    transition: transform var(--transition-base);
+}
+
+.services-card:hover .services-card__content::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* иконка справа сверху */
+.services-card__content>i,
+.services-card__content>svg {
+    position: absolute !important;
+    top: 24px !important;
+    right: 24px !important;
+    width: 56px !important;
+    height: 56px !important;
+    margin: 0 !important;
+    padding: 15px !important;
+    border: 1px solid rgba(255, 122, 26, 0.34);
+    border-radius: 20px;
+    color: var(--color-orange) !important;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.16), transparent 36%),
+        rgba(255, 122, 26, 0.1);
+    box-shadow:
+        0 16px 34px rgba(0, 0, 0, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    filter: none !important;
+    stroke-width: 2.1 !important;
+    transition:
+        transform var(--transition-base),
+        color var(--transition-base),
+        background var(--transition-base),
+        filter var(--transition-base);
+}
+
+.services-card:hover .services-card__content>i,
+.services-card:hover .services-card__content>svg {
+    transform: translateY(-4px) rotate(-5deg);
+    color: var(--color-white) !important;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.28), transparent 36%),
+        linear-gradient(145deg, var(--color-orange-hover), var(--color-orange-dark));
+    filter: drop-shadow(0 0 16px rgba(255, 122, 26, 0.44)) !important;
+}
+
+.services-card__content strong {
+    max-width: calc(100% - 78px);
+    color: var(--color-white);
+    font-size: clamp(1.55rem, 2.4vw, 2.35rem) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+}
+
+.services-card__content small {
+    display: block;
+    max-width: 620px;
+    color: rgba(199, 208, 216, 0.88) !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+}
+
+/* кнопка-ссылка */
+.services-card__content em {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 42px;
+    margin-top: 8px !important;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 122, 26, 0.34);
+    border-radius: 999px;
+    color: var(--color-orange) !important;
+    background: rgba(255, 122, 26, 0.08);
+    font-size: 12px !important;
+    font-style: normal;
+    font-weight: 950;
+    line-height: 1.1;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+    white-space: normal;
+    transition:
+        color var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base);
+}
+
+.services-card__content em::after {
+    content: "→";
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    margin-left: 8px;
+    transform: none !important;
+    background: none !important;
+    transition: transform var(--transition-base);
+}
+
+.services-card:hover .services-card__content em {
+    color: var(--color-white) !important;
+    border-color: var(--color-orange);
+    background: var(--color-orange);
+}
+
+.services-card:hover .services-card__content em::after {
+    transform: translateX(3px) !important;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1023px) {
+
+    .services-card,
+    .services-card:nth-child(1),
+    .services-card:nth-child(2),
+    .services-card:nth-child(3),
+    .services-card:nth-child(4),
+    .services-card:nth-child(even) {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .services-card:nth-child(even) .services-card__image,
+    .services-card:nth-child(even) .services-card__content {
+        order: initial;
+    }
+
+    .services-card__image {
+        min-height: 260px !important;
+        border-radius: 34px !important;
+    }
+
+    .services-card__content {
+        min-height: auto !important;
+        padding: 30px !important;
+        border-radius: 34px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .services-cards-section {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+
+    .services-cards-grid {
+        gap: 20px !important;
+    }
+
+    .services-card__image {
+        min-height: 220px !important;
+        border-radius: 28px !important;
+    }
+
+    .services-card__content {
+        padding: 24px !important;
+        padding-top: 86px !important;
+        border-radius: 28px !important;
+    }
+
+    .services-card__content>i,
+    .services-card__content>svg {
+        top: 22px !important;
+        right: 22px !important;
+        width: 50px !important;
+        height: 50px !important;
+        padding: 14px !important;
+        border-radius: 18px;
+    }
+
+    .services-card__content strong {
+        max-width: 100%;
+        font-size: 1.45rem !important;
+    }
+
+    .services-card__content small {
+        font-size: 13px !important;
+    }
+
+    .services-card__content em {
+        min-height: 38px;
+        padding: 9px 13px;
+        font-size: 11px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .services-card__image {
+        min-height: 205px !important;
+    }
+
+    .services-card__content {
+        padding: 22px !important;
+        padding-top: 80px !important;
+    }
+}
