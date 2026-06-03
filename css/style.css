@@ -3170,3 +3170,273 @@ body {
     }
 }
 
+/* =========================================================
+   ABOUT MARQUEE — DARK COMPACT VERSION
+   paste at the very bottom of style.css
+========================================================= */
+
+.about-marquee.marquee-section {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(8px, 1.5vw, 14px) 0 !important;
+    color: var(--color-white) !important;
+    background:
+        radial-gradient(circle at 10% 50%, rgba(255, 122, 26, 0.13), transparent 32%),
+        radial-gradient(circle at 88% 50%, rgba(18, 58, 90, 0.46), transparent 36%),
+        linear-gradient(135deg, #050607 0%, #0b0d10 52%, #071826 100%) !important;
+    border-top: 1px solid rgba(255, 122, 26, 0.2) !important;
+    border-bottom: 1px solid rgba(255, 122, 26, 0.2) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+/* тёмные fade-края */
+.about-marquee.marquee-section::before,
+.about-marquee.marquee-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    width: clamp(70px, 12vw, 170px);
+    pointer-events: none;
+}
+
+.about-marquee.marquee-section::before {
+    left: 0;
+    background: linear-gradient(90deg, #050607, transparent);
+}
+
+.about-marquee.marquee-section::after {
+    right: 0;
+    background: linear-gradient(270deg, #071826, transparent);
+}
+
+/* строка ниже и плотнее */
+.about-marquee .marquee-section__row {
+    display: flex !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    background: transparent !important;
+}
+
+/* трек */
+.about-marquee .marquee-section__track {
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    min-width: max-content !important;
+    animation-duration: 32s !important;
+    will-change: transform;
+}
+
+.about-marquee:hover .marquee-section__track {
+    animation-play-state: paused;
+}
+
+/* элементы */
+.about-marquee .marquee-section__track a {
+    position: relative;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    min-height: 56px !important;
+    padding: 9px clamp(22px, 3vw, 42px) !important;
+    color: rgba(248, 250, 252, 0.88) !important;
+    background: transparent !important;
+    font-size: clamp(0.95rem, 1.5vw, 1.35rem) !important;
+    font-weight: 950 !important;
+    line-height: 1 !important;
+    letter-spacing: -0.035em !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    transition:
+        color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.about-marquee .marquee-section__track a:hover {
+    color: var(--color-white) !important;
+    transform: translateY(-2px);
+}
+
+/* разделитель */
+.about-marquee .marquee-section__track a::after {
+    content: "";
+    width: 7px !important;
+    height: 7px !important;
+    margin-left: clamp(12px, 2vw, 26px) !important;
+    border-radius: 50% !important;
+    background: var(--color-orange) !important;
+    box-shadow: 0 0 16px rgba(255, 122, 26, 0.72) !important;
+}
+
+/* иконки */
+.about-marquee .marquee-section__track a i,
+.about-marquee .marquee-section__track a svg {
+    display: grid !important;
+    place-items: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    padding: 9px !important;
+    border: 1px solid rgba(255, 122, 26, 0.3) !important;
+    border-radius: 50% !important;
+    color: var(--color-orange) !important;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.14), transparent 36%),
+        rgba(255, 255, 255, 0.045) !important;
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.26),
+        0 0 0 5px rgba(255, 122, 26, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    stroke-width: 2.1 !important;
+    transition:
+        transform var(--transition-base),
+        color var(--transition-base),
+        background var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.about-marquee .marquee-section__track a:hover i,
+.about-marquee .marquee-section__track a:hover svg {
+    transform: scale(1.06) rotate(-5deg);
+    color: var(--color-white) !important;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.28), transparent 36%),
+        linear-gradient(145deg, var(--color-orange-hover), var(--color-orange-dark)) !important;
+    box-shadow:
+        0 16px 34px rgba(217, 94, 0, 0.2),
+        0 0 0 7px rgba(255, 122, 26, 0.08),
+        0 0 24px rgba(255, 122, 26, 0.26) !important;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .about-marquee.marquee-section {
+        padding: 7px 0 !important;
+    }
+
+    .about-marquee.marquee-section::before,
+    .about-marquee.marquee-section::after {
+        width: 62px;
+    }
+
+    .about-marquee .marquee-section__track {
+        animation-duration: 26s !important;
+    }
+
+    .about-marquee .marquee-section__track a {
+        min-height: 48px !important;
+        gap: 9px !important;
+        padding: 8px 22px !important;
+        font-size: 0.86rem !important;
+    }
+
+    .about-marquee .marquee-section__track a i,
+    .about-marquee .marquee-section__track a svg {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        padding: 8px !important;
+    }
+
+    .about-marquee .marquee-section__track a::after {
+        width: 5px !important;
+        height: 5px !important;
+        margin-left: 10px !important;
+    }
+}
+
+/* =========================================================
+   ABOUT MARQUEE — BRIGHT CONTENT FIX
+========================================================= */
+
+.about-marquee.marquee-section .marquee-section__track a {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    font-weight: 950 !important;
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.55),
+        0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+/* чтобы текст точно не был серым от старых стилей */
+.about-marquee.marquee-section .marquee-section__track a,
+.about-marquee.marquee-section .marquee-section__track a:visited,
+.about-marquee.marquee-section .marquee-section__track a:active {
+    color: #ffffff !important;
+}
+
+/* иконки делаем ярче */
+.about-marquee.marquee-section .marquee-section__track a i,
+.about-marquee.marquee-section .marquee-section__track a svg {
+    color: var(--color-orange) !important;
+    stroke: var(--color-orange) !important;
+    border-color: rgba(255, 122, 26, 0.65) !important;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.26), transparent 36%),
+        linear-gradient(145deg, rgba(255, 122, 26, 0.2), rgba(255, 122, 26, 0.08)) !important;
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.32),
+        0 0 0 5px rgba(255, 122, 26, 0.08),
+        0 0 22px rgba(255, 122, 26, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+}
+
+/* разделитель ярче */
+.about-marquee.marquee-section .marquee-section__track a::after {
+    background: var(--color-orange) !important;
+    box-shadow:
+        0 0 12px rgba(255, 122, 26, 0.9),
+        0 0 24px rgba(255, 122, 26, 0.5) !important;
+}
+
+/* hover — прям сочный */
+.about-marquee.marquee-section .marquee-section__track a:hover {
+    color: var(--color-orange-hover) !important;
+    text-shadow:
+        0 0 18px rgba(255, 122, 26, 0.42),
+        0 2px 12px rgba(0, 0, 0, 0.55);
+}
+
+.about-marquee.marquee-section .marquee-section__track a:hover i,
+.about-marquee.marquee-section .marquee-section__track a:hover svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    border-color: rgba(255, 122, 26, 0.9) !important;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.34), transparent 36%),
+        linear-gradient(145deg, var(--color-orange-hover), var(--color-orange-dark)) !important;
+    box-shadow:
+        0 16px 36px rgba(217, 94, 0, 0.28),
+        0 0 0 7px rgba(255, 122, 26, 0.12),
+        0 0 30px rgba(255, 122, 26, 0.42) !important;
+}
+
+/* можно чуть увеличить контент, чтобы был заметнее */
+.about-marquee.marquee-section .marquee-section__track a {
+    font-size: clamp(1.05rem, 1.65vw, 1.48rem) !important;
+}
+
+.about-marquee.marquee-section .marquee-section__track a i,
+.about-marquee.marquee-section .marquee-section__track a svg {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .about-marquee.marquee-section .marquee-section__track a {
+        font-size: 0.92rem !important;
+    }
+
+    .about-marquee.marquee-section .marquee-section__track a i,
+    .about-marquee.marquee-section .marquee-section__track a svg {
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+    }
+}
