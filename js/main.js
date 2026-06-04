@@ -159,15 +159,20 @@
     };
 
     const hydrateDocumentMeta = () => {
-        const companyName = config.company?.name;
+        const companyName = config.company?.name || '';
 
         if (!companyName) return;
 
         document.querySelectorAll('[data-page-title]').forEach((element) => {
-            const pageTitle = element.getAttribute('data-page-title');
+            const rawTitle = element.getAttribute('data-page-title') || '';
 
-            if (pageTitle) {
-                document.title = `${pageTitle} | ${companyName}`;
+            const cleanTitle = rawTitle
+                .replace(/\s*\|\s*GUTTRO.*$/gi, '')
+                .replace(/\s+GUTTRO\b/gi, '')
+                .trim();
+
+            if (cleanTitle) {
+                document.title = `${cleanTitle} | ${companyName}`;
             }
         });
     };
