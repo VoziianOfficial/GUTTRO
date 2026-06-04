@@ -1518,3 +1518,314 @@
         justify-content: center;
     }
 }
+
+/* =========================================================
+   GUTTER ICONS FULL — STATIC DARK ICON STRIP
+   no movement, no icon background circles
+========================================================= */
+
+.gutter-icons-full {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: clamp(30px, 4vw, 54px) 0;
+    background:
+        radial-gradient(circle at 8% 20%, rgba(255, 122, 26, 0.16), transparent 30%),
+        radial-gradient(circle at 92% 80%, rgba(18, 58, 90, 0.58), transparent 38%),
+        linear-gradient(135deg, #050607 0%, #101214 52%, #071826 100%);
+}
+
+.gutter-icons-full::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(circle at 50% 50%, black, transparent 78%);
+    pointer-events: none;
+}
+
+.gutter-icons-full::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(90deg, rgba(5, 6, 7, 0.78), transparent 18%, transparent 82%, rgba(7, 24, 38, 0.82));
+    pointer-events: none;
+}
+
+/* rows */
+
+.gutter-icons-full__row {
+    width: 100%;
+}
+
+.gutter-icons-full__row+.gutter-icons-full__row {
+    margin-top: clamp(18px, 2.4vw, 30px);
+}
+
+/* static grid, no animation */
+
+.gutter-icons-full__track {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: clamp(18px, 3vw, 46px);
+    width: min(100% - 32px, 1280px);
+    margin-inline: auto;
+    padding: 0;
+    animation: none !important;
+    transform: none !important;
+}
+
+/* убираем вторые дубликаты, чтобы не было слишком много */
+.gutter-icons-full__track span:nth-child(n + 9) {
+    display: none;
+}
+
+/* icon wrapper — no circle, no bg */
+
+.gutter-icons-full span {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: auto;
+    height: auto;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transition:
+        transform var(--transition-base),
+        filter var(--transition-base);
+}
+
+.gutter-icons-full span::before,
+.gutter-icons-full span::after {
+    display: none !important;
+    content: none !important;
+}
+
+.gutter-icons-full span:hover {
+    transform: translateY(-8px) scale(1.12);
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* icons only */
+
+.gutter-icons-full i,
+.gutter-icons-full svg {
+    width: clamp(48px, 5vw, 82px) !important;
+    height: clamp(48px, 5vw, 82px) !important;
+    color: var(--color-orange);
+    stroke-width: 1.55 !important;
+    filter:
+        drop-shadow(0 12px 24px rgba(0, 0, 0, 0.34)) drop-shadow(0 0 18px rgba(255, 122, 26, 0.24));
+    transition:
+        color var(--transition-base),
+        transform var(--transition-base),
+        filter var(--transition-base);
+}
+
+.gutter-icons-full span:hover i,
+.gutter-icons-full span:hover svg {
+    color: #ffffff;
+    transform: rotate(-6deg);
+    filter:
+        drop-shadow(0 16px 30px rgba(0, 0, 0, 0.42)) drop-shadow(0 0 26px rgba(255, 122, 26, 0.55));
+}
+
+/* немного разный размер, чтобы не было скучной сетки */
+.gutter-icons-full__row--one span:nth-child(2) svg,
+.gutter-icons-full__row--one span:nth-child(5) svg,
+.gutter-icons-full__row--two span:nth-child(3) svg,
+.gutter-icons-full__row--two span:nth-child(6) svg {
+    width: clamp(58px, 6vw, 96px) !important;
+    height: clamp(58px, 6vw, 96px) !important;
+}
+
+/* tablet */
+
+@media (max-width: 1023px) {
+    .gutter-icons-full__track {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .gutter-icons-full__track span:nth-child(n + 9) {
+        display: none;
+    }
+}
+
+/* mobile */
+
+@media (max-width: 767px) {
+    .gutter-icons-full {
+        padding: 28px 0;
+    }
+
+    .gutter-icons-full__row+.gutter-icons-full__row {
+        margin-top: 20px;
+    }
+
+    .gutter-icons-full__track {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+        width: min(100% - 28px, 520px);
+    }
+
+    .gutter-icons-full i,
+    .gutter-icons-full svg {
+        width: 42px !important;
+        height: 42px !important;
+    }
+
+    .gutter-icons-full__row--one span:nth-child(2) svg,
+    .gutter-icons-full__row--one span:nth-child(5) svg,
+    .gutter-icons-full__row--two span:nth-child(3) svg,
+    .gutter-icons-full__row--two span:nth-child(6) svg {
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+
+/* =========================================================
+   GUTTER ICONS FULL — ONE STATIC ROW, PURE DARK
+========================================================= */
+
+.gutter-icons-full {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: clamp(28px, 4vw, 48px) 0;
+    background: linear-gradient(180deg, #050505 0%, #0b0b0d 100%) !important;
+}
+
+/* убираем сетку/синие свечения/оверлеи */
+.gutter-icons-full::before,
+.gutter-icons-full::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* оставляем только первый ряд */
+.gutter-icons-full__row--two {
+    display: none !important;
+}
+
+.gutter-icons-full__row {
+    width: 100%;
+}
+
+/* один ряд */
+.gutter-icons-full__track {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(26px, 4vw, 70px) !important;
+    width: min(100% - 32px, 1320px);
+    margin-inline: auto;
+    padding: 0 !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+/* убираем дубликаты после 8-й иконки */
+.gutter-icons-full__track span:nth-child(n + 9) {
+    display: none !important;
+}
+
+/* никаких кругов/фона у иконок */
+.gutter-icons-full span {
+    display: grid;
+    place-items: center;
+    width: auto !important;
+    height: auto !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: transform var(--transition-base), filter var(--transition-base);
+}
+
+.gutter-icons-full span::before,
+.gutter-icons-full span::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* сами иконки */
+.gutter-icons-full i,
+.gutter-icons-full svg {
+    width: clamp(48px, 5vw, 86px) !important;
+    height: clamp(48px, 5vw, 86px) !important;
+    color: var(--color-orange) !important;
+    stroke-width: 1.55 !important;
+    filter:
+        drop-shadow(0 12px 24px rgba(0, 0, 0, 0.42)) drop-shadow(0 0 18px rgba(255, 122, 26, 0.26));
+    transition:
+        transform var(--transition-base),
+        color var(--transition-base),
+        filter var(--transition-base);
+}
+
+/* hover */
+.gutter-icons-full span:hover {
+    transform: translateY(-7px) scale(1.1);
+}
+
+.gutter-icons-full span:hover i,
+.gutter-icons-full span:hover svg {
+    color: #ffffff !important;
+    transform: rotate(-6deg);
+    filter:
+        drop-shadow(0 14px 26px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 26px rgba(255, 122, 26, 0.55));
+}
+
+/* tablet */
+@media (max-width: 1023px) {
+    .gutter-icons-full__track {
+        gap: clamp(20px, 3vw, 42px) !important;
+    }
+
+    .gutter-icons-full i,
+    .gutter-icons-full svg {
+        width: clamp(40px, 6vw, 64px) !important;
+        height: clamp(40px, 6vw, 64px) !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .gutter-icons-full {
+        padding: 24px 0;
+    }
+
+    .gutter-icons-full__track {
+        justify-content: flex-start !important;
+        overflow-x: auto;
+        gap: 24px !important;
+        width: 100%;
+        padding-inline: 18px !important;
+        scrollbar-width: none;
+    }
+
+    .gutter-icons-full__track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gutter-icons-full i,
+    .gutter-icons-full svg {
+        width: 42px !important;
+        height: 42px !important;
+    }
+}
