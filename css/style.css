@@ -3387,3 +3387,102 @@ body {
         display: none !important;
     }
 }
+
+
+/* =========================================================
+   MOBILE HEADER — FIX BURGER VISIBILITY ON NARROW PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+    .site-header__inner {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        gap: 8px !important;
+    }
+
+    .brand {
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .brand__text {
+        min-width: 0 !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+        text-overflow: ellipsis !important;
+    }
+
+    .header-actions {
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        min-width: max-content !important;
+    }
+
+    .header-cta {
+        display: none !important;
+    }
+
+    .header-icon-button,
+    .menu-toggle {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        padding: 0 !important;
+    }
+
+    .menu-toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* совсем узкие телефоны */
+@media (max-width: 390px) {
+    .site-header .container-wide {
+        padding-inline: 12px !important;
+    }
+
+    .header-actions {
+        gap: 5px !important;
+    }
+
+    .header-email-button {
+        display: none !important;
+    }
+
+    .header-icon-button,
+    .menu-toggle {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+    }
+
+    .brand__icon {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+    }
+}
+
+/* если экран прям очень узкий */
+@media (max-width: 340px) {
+    .brand__text {
+        display: none !important;
+    }
+
+    .mobile-call-button {
+        display: none !important;
+    }
+
+    .header-icon-button,
+    .menu-toggle {
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+    }
+}
