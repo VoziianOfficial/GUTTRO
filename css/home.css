@@ -3894,3 +3894,43 @@ section.home-hero#hero .home-hero__panel {
         font-size: 11px;
     }
 }
+
+
+
+.home-faq .faq-list.faq-list--columns,
+.service-faq .faq-list.faq-list--columns,
+.service-faq .faq-list.service-faq__columns {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px 28px !important;
+    width: min(100%, 1120px) !important;
+    margin-inline: auto !important;
+    align-items: start !important;
+}
+
+.home-faq .faq-column,
+.service-faq .faq-column,
+.service-faq__column {
+    display: grid !important;
+    gap: 14px !important;
+    align-content: start !important;
+    min-width: 0 !important;
+}
+
+
+@media (max-width: 767px) {
+
+    .home-faq .faq-list.faq-list--columns,
+    .service-faq .faq-list.faq-list--columns,
+    .service-faq .faq-list.service-faq__columns {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .home-faq .faq-column,
+    .service-faq .faq-column,
+    .service-faq__column {
+        gap: 12px !important;
+    }
+}
