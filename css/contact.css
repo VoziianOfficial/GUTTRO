@@ -1802,3 +1802,55 @@
         width: 100%;
     }
 }
+
+/* =========================================================
+   CONTACT SIGNAL HERO — BACKGROUND PHOTO
+========================================================= */
+
+.contact-signal-hero {
+    background:
+        linear-gradient(90deg,
+            rgba(5, 6, 7, 0.96) 0%,
+            rgba(5, 6, 7, 0.88) 38%,
+            rgba(5, 6, 7, 0.66) 68%,
+            rgba(5, 6, 7, 0.82) 100%),
+        radial-gradient(circle at 10% 18%, rgba(255, 122, 26, 0.22), transparent 30%),
+        radial-gradient(circle at 92% 82%, rgba(18, 58, 90, 0.58), transparent 38%),
+        url("../assets/images/contact-gutters.jpg") center / cover no-repeat !important;
+}
+
+/* чтобы фото было объемнее, но не мешало тексту */
+.contact-signal-hero::before {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+        radial-gradient(circle at 72% 42%, rgba(255, 122, 26, 0.12), transparent 36%) !important;
+    background-size: 78px 78px, 78px 78px, auto !important;
+}
+
+/* затемнение под текстом слева */
+.contact-signal-hero__content {
+    position: relative;
+    z-index: 3;
+}
+
+/* если справа визуальные beam-блоки стали плохо читаться */
+.contact-signal-hero__beam {
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045)),
+        rgba(5, 6, 7, 0.5) !important;
+    backdrop-filter: blur(18px);
+}
+
+/* mobile — фото затемняем сильнее */
+@media (max-width: 767px) {
+    .contact-signal-hero {
+        background:
+            linear-gradient(180deg,
+                rgba(5, 6, 7, 0.94) 0%,
+                rgba(5, 6, 7, 0.86) 48%,
+                rgba(5, 6, 7, 0.94) 100%),
+            radial-gradient(circle at 12% 14%, rgba(255, 122, 26, 0.2), transparent 30%),
+            url("../assets/images/contact-gutters.jpg") center / cover no-repeat !important;
+    }
+}
