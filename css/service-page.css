@@ -1829,3 +1829,164 @@
         height: 42px !important;
     }
 }
+
+/* =========================================================
+   SERVICE FAQ — TWO STABLE COLUMNS
+========================================================= */
+
+.service-faq .faq-list.service-faq__columns {
+    width: min(100%, 1040px) !important;
+    margin-inline: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+    align-items: start !important;
+}
+
+.service-faq__column {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+}
+
+/* чтобы открытие не дергало вторую колонку */
+.service-faq__column .faq-item {
+    width: 100%;
+}
+
+/* делаем вопросы компактнее и аккуратнее */
+.service-faq .faq-item {
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.service-faq .faq-question {
+    min-height: 68px;
+    align-items: center;
+}
+
+.service-faq .faq-answer {
+    overflow: hidden;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .service-faq .faq-list.service-faq__columns {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .service-faq__column {
+        gap: 12px;
+    }
+
+    .service-faq .faq-question {
+        min-height: 62px;
+    }
+}
+
+/* =========================================================
+   SERVICE FAQ — WIDER AND LOWER QUESTIONS
+========================================================= */
+
+.service-faq .faq-list.service-faq__columns {
+    width: min(100%, 1180px) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px 18px !important;
+}
+
+/* ниже карточки */
+.service-faq .faq-item {
+    min-height: 66px !important;
+    border-radius: 22px !important;
+}
+
+/* ниже сама строка вопроса */
+.service-faq .faq-question {
+    min-height: 66px !important;
+    height: 66px !important;
+    padding: 14px 18px !important;
+    display: grid !important;
+    grid-template-columns: 28px minmax(0, 1fr) 24px !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+/* текст делаем больше в длину, не в высоту */
+.service-faq .faq-question span:not(.faq-question__plus) {
+    display: block !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.15 !important;
+}
+
+/* иконка компактнее */
+.service-faq .faq-question__icon {
+    width: 22px !important;
+    height: 22px !important;
+}
+
+/* плюс компактнее */
+.service-faq .faq-question__plus {
+    width: 20px !important;
+    height: 20px !important;
+    justify-self: end !important;
+}
+
+/* ответ открывается нормально вниз */
+.service-faq .faq-answer {
+    overflow: hidden !important;
+}
+
+.service-faq .faq-answer p {
+    padding-top: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+/* открытая карточка может быть выше, но вопрос остается низким */
+.service-faq .faq-item.is-active,
+.service-faq .faq-item.is-open,
+.service-faq .faq-item:has(.faq-question[aria-expanded="true"]) {
+    min-height: auto !important;
+}
+
+/* tablet */
+@media (max-width: 1023px) {
+    .service-faq .faq-list.service-faq__columns {
+        width: min(100%, 960px) !important;
+        gap: 12px !important;
+    }
+
+    .service-faq .faq-question {
+        min-height: 64px !important;
+        height: 64px !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .service-faq .faq-list.service-faq__columns {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+    }
+
+    .service-faq .faq-item {
+        min-height: 62px !important;
+        border-radius: 18px !important;
+    }
+
+    .service-faq .faq-question {
+        min-height: 62px !important;
+        height: 62px !important;
+        padding: 13px 15px !important;
+        grid-template-columns: 24px minmax(0, 1fr) 22px !important;
+        gap: 10px !important;
+    }
+
+    .service-faq .faq-question__icon {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
