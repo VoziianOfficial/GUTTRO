@@ -1381,7 +1381,6 @@ li {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    border: 1px solid rgba(255, 122, 26, 0.25);
     border-radius: var(--radius-xl);
     color: var(--color-white);
     background:
