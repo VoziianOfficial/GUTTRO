@@ -53,6 +53,7 @@ window.SITE_CONFIG = {
         mosaic4: 'assets/images/gutter-mosaic-04.jpg',
 
         stormCta: 'assets/images/contact-gutters.jpg',
+        ctaAll: 'assets/images/cta-all.jpg',
         contact: 'assets/images/contact-gutters.jpg',
         about: 'assets/images/about-gutters.jpg',
         servicesHero: 'assets/images/services-hero.jpg', 
