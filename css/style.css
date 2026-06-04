@@ -3282,3 +3282,108 @@ body {
         min-width: 34px !important;
     }
 }
+
+
+
+@media (max-width: 1023px) {
+
+    h1,
+    .page-hero__title,
+    .home-hero__title,
+    .services-hero h1,
+    .about-hero h1,
+    .contact-signal-hero h1,
+    .contact-chute-hero h1,
+    .contact-signal-hero__content h1,
+    .contact-chute-hero__content h1 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .page-hero__content,
+    .page-hero__panel,
+    .home-hero__content,
+    .services-hero__content,
+    .about-hero__content,
+    .contact-signal-hero__content,
+    .contact-chute-hero__content {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        justify-items: center !important;
+        align-items: center !important;
+    }
+
+    .page-hero__text,
+    .home-hero__text,
+    .services-hero .page-hero__text,
+    .about-hero .page-hero__text,
+    .contact-signal-hero__content>p,
+    .contact-chute-hero__content>p {
+        max-width: 720px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .page-hero__actions,
+    .home-hero__actions,
+    .services-hero__actions,
+    .contact-signal-hero__actions,
+    .contact-chute-hero__actions {
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    h1,
+    .page-hero__title,
+    .home-hero__title,
+    .services-hero h1,
+    .about-hero h1,
+    .contact-signal-hero h1,
+    .contact-chute-hero h1,
+    .contact-signal-hero__content h1,
+    .contact-chute-hero__content h1 {
+        text-align: center !important;
+        max-width: 100% !important;
+        font-size: clamp(2.35rem, 11vw, 3.35rem) !important;
+        line-height: 0.98 !important;
+        letter-spacing: -0.075em !important;
+    }
+
+    .page-hero__panel,
+    .home-hero__content,
+    .services-hero__content,
+    .about-hero__content,
+    .contact-signal-hero__content,
+    .contact-chute-hero__content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .page-hero__actions,
+    .home-hero__actions,
+    .services-hero__actions,
+    .contact-signal-hero__actions,
+    .contact-chute-hero__actions {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .home-hero__badges {
+        display: none !important;
+    }
+}
