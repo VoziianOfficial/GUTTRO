@@ -710,9 +710,9 @@
     };
 
     const init = () => {
-        hydrateGlobalSiteData();
         initReducedMotion();
 
+        hydrateGlobalSiteData();
         hydrateConfigText();
         hydratePhoneLinks();
         hydrateEmailLinks();
