@@ -3483,3 +3483,15 @@ body {
         min-width: 38px !important;
     }
 }
+
+
+[data-bg-image-key]::before {
+    background-image: none !important;
+}
+
+
+[data-bg-image-key] {
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
