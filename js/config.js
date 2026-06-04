@@ -27,7 +27,7 @@ window.SITE_CONFIG = {
 
     footer: {
         description:
-            'GUTTRO is an independent gutter provider comparison platform that helps homeowners explore local service categories, compare provider options, and request quotes from independent companies.',
+            'We connect homeowners with local gutter providers for cleaning, repair, installation, and guards. Compare independent companies to find the right fit for your home and project needs.',
 
         disclaimer:
             'Disclaimer: This site is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on this site.'

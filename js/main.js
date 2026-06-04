@@ -172,6 +172,158 @@
         });
     };
 
+    const hydrateGlobalSiteData = () => {
+        const companyName = config.company?.name || '';
+        const companyId = config.company?.companyId || '';
+        const companyAddress = config.company?.address || '';
+        const serviceArea = config.company?.serviceArea || '';
+
+        const phoneRaw = config.contact?.phoneRaw || '';
+        const phoneDisplay = config.contact?.phoneDisplay || '';
+        const phoneButtonText = config.contact?.phoneButtonText || phoneDisplay;
+        const email = config.contact?.email || '';
+        const supportHours = config.contact?.supportHours || '';
+
+        const replacements = [
+            ['GUTTRO', companyName],
+            ['GUT-US-4827', companyId],
+            ['1846 Rainline Avenue, Austin, TX 78701, USA', companyAddress],
+            ['USA gutter provider comparison platform', serviceArea],
+            ['+18885550148', phoneRaw],
+            ['(888) 555-0148', phoneDisplay],
+            ['hello@guttrocompare.com', email],
+            ['Mon–Fri, 8:00 AM–7:00 PM', supportHours],
+
+            /* placeholders, если захочешь писать их в html */
+            ['{{company.name}}', companyName],
+            ['{{company.id}}', companyId],
+            ['{{company.address}}', companyAddress],
+            ['{{company.serviceArea}}', serviceArea],
+            ['{{contact.phoneRaw}}', phoneRaw],
+            ['{{contact.phoneDisplay}}', phoneDisplay],
+            ['{{contact.phoneButtonText}}', phoneButtonText],
+            ['{{contact.email}}', email],
+            ['{{contact.supportHours}}', supportHours]
+        ].filter(([, value]) => value);
+
+        const replaceValue = (value) => {
+            if (!value || typeof value !== 'string') return value;
+
+            return replacements.reduce((result, [from, to]) => {
+                return result.split(from).join(to);
+            }, value);
+        };
+
+        /* 1. Точный data-config */
+        document.querySelectorAll('[data-config]').forEach((element) => {
+            const path = element.getAttribute('data-config');
+            const value = getConfigValue(path);
+
+            if (value) {
+                element.textContent = value;
+            }
+        });
+
+        /* 2. Телефонные ссылки */
+        document.querySelectorAll('[data-phone-link]').forEach((element) => {
+            if (phoneRaw) {
+                element.setAttribute('href', `tel:${phoneRaw}`);
+            }
+
+            const mode = element.getAttribute('data-phone-link');
+
+            if (mode === 'display') {
+                element.textContent = phoneDisplay;
+            }
+
+            if (mode === 'button') {
+                element.textContent = phoneButtonText;
+            }
+        });
+
+        /* 3. Email ссылки */
+        document.querySelectorAll('[data-email-link]').forEach((element) => {
+            if (email) {
+                element.setAttribute('href', `mailto:${email}`);
+            }
+
+            const mode = element.getAttribute('data-email-link');
+
+            if (mode === 'display') {
+                element.textContent = email;
+            }
+        });
+
+        /* 4. Заголовок вкладки */
+        if (document.title) {
+            document.title = replaceValue(document.title);
+        }
+
+        /* 5. Meta description и другие атрибуты */
+        const attributeNames = [
+            'href',
+            'aria-label',
+            'title',
+            'alt',
+            'placeholder',
+            'content',
+            'value'
+        ];
+
+        document
+            .querySelectorAll('a, img, input, textarea, meta, button, [aria-label], [title], [placeholder]')
+            .forEach((element) => {
+                attributeNames.forEach((attribute) => {
+                    if (!element.hasAttribute(attribute)) return;
+
+                    const currentValue = element.getAttribute(attribute);
+                    const nextValue = replaceValue(currentValue);
+
+                    if (nextValue !== currentValue) {
+                        element.setAttribute(attribute, nextValue);
+                    }
+                });
+            });
+
+        /* 6. Обычный текст на странице */
+        const ignoredTags = ['SCRIPT', 'STYLE', 'NOSCRIPT', 'SVG'];
+
+        const walker = document.createTreeWalker(
+            document.body,
+            NodeFilter.SHOW_TEXT,
+            {
+                acceptNode(node) {
+                    const parent = node.parentElement;
+
+                    if (!parent || ignoredTags.includes(parent.tagName)) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    if (!node.nodeValue || !node.nodeValue.trim()) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            }
+        );
+
+        const textNodes = [];
+
+        while (walker.nextNode()) {
+            textNodes.push(walker.currentNode);
+        }
+
+        textNodes.forEach((node) => {
+            const currentValue = node.nodeValue;
+            const nextValue = replaceValue(currentValue);
+
+            if (nextValue !== currentValue) {
+                node.nodeValue = nextValue;
+            }
+        });
+    };
+
     const initStickyHeader = () => {
         const header = document.querySelector(selectors.header);
 
@@ -558,6 +710,7 @@
     };
 
     const init = () => {
+        hydrateGlobalSiteData();
         initReducedMotion();
 
         hydrateConfigText();
