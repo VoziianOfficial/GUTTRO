@@ -47,12 +47,12 @@ window.SITE_CONFIG = {
         downspout: 'assets/images/downspout-water.jpg',
         roofline: 'assets/images/roofline-drainage.jpg',
 
-        mosaic1: 'assets/images/gutter-mosaic-01.jpg',
+        mosaic1: 'assets/images/gutter-mosaic-01-1.jpg',
         mosaic2: 'assets/images/gutter-mosaic-02.jpg',
         mosaic3: 'assets/images/gutter-mosaic-03.jpg',
         mosaic4: 'assets/images/gutter-mosaic-04.jpg',
 
-        stormCta: 'assets/images/gutter-storm-cta.jpg',
+        stormCta: 'assets/images/contact-gutters.jpg',
         contact: 'assets/images/contact-gutters.jpg',
         about: 'assets/images/about-gutters.jpg',
         servicesHero: 'assets/images/services-hero.jpg'
