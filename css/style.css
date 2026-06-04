@@ -3389,9 +3389,6 @@ body {
 }
 
 
-/* =========================================================
-   MOBILE HEADER — FIX BURGER VISIBILITY ON NARROW PHONES
-========================================================= */
 
 @media (max-width: 480px) {
     .site-header__inner {
@@ -3441,7 +3438,7 @@ body {
     }
 }
 
-/* совсем узкие телефоны */
+
 @media (max-width: 390px) {
     .site-header .container-wide {
         padding-inline: 12px !important;
@@ -3469,7 +3466,7 @@ body {
     }
 }
 
-/* если экран прям очень узкий */
+
 @media (max-width: 340px) {
     .brand__text {
         display: none !important;
