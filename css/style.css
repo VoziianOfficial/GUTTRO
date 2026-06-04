@@ -966,7 +966,7 @@ li {
 }
 
 .page-hero__actions {
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .pipe-nav {
