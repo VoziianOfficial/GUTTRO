@@ -56,10 +56,15 @@ window.SITE_CONFIG = {
         contact: 'assets/images/contact-gutters.jpg',
         about: 'assets/images/about-gutters.jpg',
         servicesHero: 'assets/images/services-hero.jpg', 
-        
+
         aboutHero1: 'assets/images/about-hero-01.jpg',
         aboutHero2: 'assets/images/about-hero-02.jpg',
         aboutHero3: 'assets/images/about-hero-03.jpg',
+
+        cleaningIntro: 'assets/images/gutter-cleaning-intro.jpg',
+        repairIntro: 'assets/images/gutter-repair-intro.jpg',
+        installationIntro: 'assets/images/gutter-installation-intro.jpg',
+        guardsIntro: 'assets/images/gutter-guards-intro.jpg',
     },
 
     services: [
