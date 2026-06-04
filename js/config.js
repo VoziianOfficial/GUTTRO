@@ -42,7 +42,7 @@ window.SITE_CONFIG = {
         cleaning: 'assets/images/gutter-cleaning.jpg',
         repair: 'assets/images/gutter-repair.jpg',
         installation: 'assets/images/gutter-installation.jpg',
-        guards: 'assets/images/gutter-guards.jpg',
+        guards: 'assets/images/gutter-guards-card.jpg',
 
         downspout: 'assets/images/downspout-water.jpg',
         roofline: 'assets/images/roofline-drainage.jpg',
