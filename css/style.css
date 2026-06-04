@@ -6,38 +6,32 @@
 @import url("./legal.css");
 
 :root {
-    /* Dark base */
     --color-dark-main: #101214;
     --color-dark-soft: #171A1D;
     --color-dark-card: #202428;
     --color-dark-line: #2B3035;
 
-    /* Light contrast */
     --color-white: #FFFFFF;
     --color-light: #F7F8FA;
     --color-light-soft: #EEF1F4;
     --color-light-card: #FFFFFF;
     --color-border-light: #DDE2E7;
 
-    /* Main accent orange */
     --color-orange: #FF7A1A;
     --color-orange-hover: #FF8F3A;
     --color-orange-dark: #D95E00;
     --color-orange-soft: #FFE1C7;
 
-    /* Secondary dark blue accent */
     --color-blue-dark: #0B2438;
     --color-blue: #123A5A;
     --color-blue-soft: #DDEAF3;
     --color-blue-line: #1C4D72;
 
-    /* Text */
     --color-text-dark: #171A1D;
     --color-text-muted: #626B73;
     --color-text-light: #F8FAFC;
     --color-text-soft: #C7D0D8;
 
-    /* UI */
     --radius-sm: 12px;
     --radius-md: 20px;
     --radius-lg: 32px;
@@ -63,10 +57,6 @@
     --transition-base: 260ms ease;
     --transition-slow: 420ms ease;
 }
-
-/* ================================
-   RESET / BASE
-================================ */
 
 *,
 *::before,
@@ -174,10 +164,6 @@ li {
     }
 }
 
-/* ================================
-   ACCESSIBILITY
-================================ */
-
 .skip-link {
     position: fixed;
     top: 14px;
@@ -206,10 +192,6 @@ li {
     white-space: nowrap;
     border: 0;
 }
-
-/* ================================
-   LAYOUT
-================================ */
 
 .page {
     min-height: 100vh;
@@ -339,10 +321,6 @@ li {
     color: var(--color-text-muted);
 }
 
-/* ================================
-   BUTTONS
-================================ */
-
 .button,
 .btn {
     position: relative;
@@ -460,10 +438,6 @@ li {
     gap: 14px;
 }
 
-/* ================================
-   LOGO
-================================ */
-
 .brand {
     display: inline-flex;
     align-items: center;
@@ -494,10 +468,6 @@ li {
 .brand:hover .brand__icon svg path:nth-of-type(4) {
     filter: drop-shadow(0 0 10px rgba(255, 122, 26, 0.85));
 }
-
-/* ================================
-   HEADER
-================================ */
 
 .site-header {
     position: fixed;
@@ -765,10 +735,6 @@ li {
     bottom: 0;
 }
 
-/* ================================
-   MOBILE MENU
-================================ */
-
 .mobile-menu {
     position: fixed;
     inset: 0;
@@ -934,10 +900,6 @@ li {
     color: var(--color-orange);
 }
 
-/* ================================
-   PAGE HERO GLOBAL
-================================ */
-
 .page-hero {
     position: relative;
     isolation: isolate;
@@ -1006,10 +968,6 @@ li {
 .page-hero__actions {
     justify-content: center;
 }
-
-/* ================================
-   PIPE NAVIGATION
-================================ */
 
 .pipe-nav {
     position: fixed;
@@ -1102,10 +1060,6 @@ li {
     transform: translateY(-50%) translateX(0);
 }
 
-/* ================================
-   CARDS / MEDIA GLOBAL
-================================ */
-
 .media-card {
     position: relative;
     isolation: isolate;
@@ -1146,10 +1100,6 @@ li {
 .media-card:hover .media-card__image {
     transform: scale(1.06);
 }
-
-/* ================================
-   FORMS GLOBAL
-================================ */
 
 .form {
     display: grid;
@@ -1288,10 +1238,6 @@ li {
     background: #FFE2D8;
 }
 
-/* ================================
-   FAQ GLOBAL
-================================ */
-
 .faq-list {
     display: grid;
     gap: 12px;
@@ -1373,10 +1319,6 @@ li {
     display: none;
 }
 
-/* ================================
-   CTA CARD GLOBAL
-================================ */
-
 .cta-card {
     position: relative;
     isolation: isolate;
@@ -1451,10 +1393,6 @@ li {
     height: 16px;
     color: var(--color-orange);
 }
-
-/* ================================
-   FOOTER
-================================ */
 
 .site-footer {
     position: relative;
@@ -1605,10 +1543,6 @@ li {
     color: var(--color-orange);
 }
 
-/* ================================
-   COOKIE BANNER
-================================ */
-
 .cookie-banner {
     position: fixed;
     left: 20px;
@@ -1702,10 +1636,6 @@ li {
     border: 1px solid var(--color-orange);
     background: var(--color-orange);
 }
-
-/* ================================
-   RESPONSIVE GLOBAL
-================================ */
 
 @media (max-width: 1199px) {
     .pipe-nav {
@@ -1962,10 +1892,6 @@ li {
     }
 }
 
-/* ================================
-   FINAL HEADER OVERRIDE
-================================ */
-
 :root {
     --header-height: 84px;
 }
@@ -2141,10 +2067,6 @@ li {
     }
 }
 
-/* ================================
-   HARD HEADER FIX
-================================ */
-
 :root {
     --header-height: 76px;
 }
@@ -2317,20 +2239,11 @@ body {
     }
 }
 
-/* ================================
-   PIPE NAV — HIDE ON TABLET / MOBILE
-================================ */
-
 @media (max-width: 1023px) {
     .pipe-nav {
         display: none !important;
     }
 }
-
-/* =========================================================
-   MODEL PIPE BOARD — NEW DARK DESIGN
-   no old about-model classes, no circles, no timeline rail
-========================================================= */
 
 .model-pipe-board {
     position: relative;
@@ -2403,8 +2316,6 @@ body {
     line-height: 1.62;
 }
 
-/* right side — pipe routes */
-
 .model-pipe-board__routes {
     display: grid;
     gap: 14px;
@@ -2421,7 +2332,6 @@ body {
     padding: 18px 20px 18px 28px;
     overflow: hidden;
 
-    /* this is a pipe, not a card */
     border: 1px solid rgba(255, 122, 26, 0.22);
     border-radius: 999px 34px 34px 999px;
     background:
@@ -2550,8 +2460,6 @@ body {
         0 0 28px rgba(255, 122, 26, 0.34);
 }
 
-/* tablet */
-
 @media (max-width: 1023px) {
     .model-pipe-board__layout {
         grid-template-columns: 1fr;
@@ -2580,8 +2488,6 @@ body {
         margin-left: 44px;
     }
 }
-
-/* mobile */
 
 @media (max-width: 767px) {
     .model-pipe-board {
@@ -2640,10 +2546,6 @@ body {
     }
 }
 
-/* =========================================================
-   MODEL PIPE BOARD — PREMIUM ROUTE MAP VERSION
-========================================================= */
-
 .model-pipe-board {
     position: relative;
     isolation: isolate;
@@ -2690,8 +2592,6 @@ body {
     gap: clamp(38px, 7vw, 110px);
 }
 
-/* LEFT TEXT */
-
 .model-pipe-board__intro {
     max-width: 560px;
 }
@@ -2715,8 +2615,6 @@ body {
     line-height: 1.62;
 }
 
-/* RIGHT ROUTE MAP */
-
 .model-pipe-board__routes {
     position: relative;
     display: grid;
@@ -2724,7 +2622,6 @@ body {
     padding: 18px 0;
 }
 
-/* большая мягкая труба/линия справа */
 .model-pipe-board__routes::before {
     content: "";
     position: absolute;
@@ -2745,7 +2642,6 @@ body {
         inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
-/* rows теперь не выглядят карточками */
 .model-pipe-route {
     position: relative;
     isolation: isolate;
@@ -2782,7 +2678,6 @@ body {
     transform: translateX(44px);
 }
 
-/* горизонтальная pipe-линия внутри строки */
 .model-pipe-route::before {
     content: "";
     position: absolute;
@@ -2812,7 +2707,6 @@ body {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent);
 }
 
-/* текстовая зона без карточки, но с лёгким свечением */
 .model-pipe-route div {
     position: relative;
     min-width: 0;
@@ -2850,7 +2744,6 @@ body {
     line-height: 1.5;
 }
 
-/* иконки как узлы на правой трубе */
 .model-pipe-route i,
 .model-pipe-route svg {
     position: relative;
@@ -2890,10 +2783,6 @@ body {
         0 0 30px rgba(255, 122, 26, 0.38);
 }
 
-/* ================================
-   TABLET
-================================ */
-
 @media (max-width: 1023px) {
     .model-pipe-board__layout {
         grid-template-columns: 1fr;
@@ -2918,10 +2807,6 @@ body {
         transform: none;
     }
 }
-
-/* ================================
-   MOBILE
-================================ */
 
 @media (max-width: 767px) {
     .model-pipe-board {
@@ -2993,10 +2878,6 @@ body {
     }
 }
 
-/* =========================================================
-   MODEL PIPE BOARD — REMOVE SQUARE HOVER CARD
-========================================================= */
-
 .model-pipe-route,
 .model-pipe-route:hover,
 .model-pipe-route:nth-child(even),
@@ -3008,18 +2889,15 @@ body {
     backdrop-filter: none !important;
 }
 
-/* убираем квадратный блик, который выглядит как карточка */
 .model-pipe-route::after {
     display: none !important;
     content: none !important;
 }
 
-/* hover теперь только мягкое движение строки */
 .model-pipe-route:hover {
     transform: translateX(8px) !important;
 }
 
-/* если четные строки были смещены — сохраняем красиво */
 .model-pipe-route:nth-child(even) {
     transform: translateX(34px) !important;
 }
@@ -3028,7 +2906,6 @@ body {
     transform: translateX(42px) !important;
 }
 
-/* линия внутри строки становится ярче при hover */
 .model-pipe-route::before {
     transition:
         opacity var(--transition-base),
@@ -3042,7 +2919,6 @@ body {
     filter: drop-shadow(0 0 14px rgba(255, 122, 26, 0.65));
 }
 
-/* точка возле текста красиво светится */
 .model-pipe-route div::before {
     transition:
         transform var(--transition-base),
@@ -3058,7 +2934,6 @@ body {
         0 0 22px rgba(255, 122, 26, 0.9) !important;
 }
 
-/* текст без карточки, просто подсветка */
 .model-pipe-route span {
     transition: color var(--transition-base);
 }
@@ -3067,7 +2942,6 @@ body {
     color: var(--color-orange-hover) !important;
 }
 
-/* иконка остается главным hover-акцентом */
 .model-pipe-route:hover i,
 .model-pipe-route:hover svg {
     transform: scale(1.08) rotate(-5deg) !important;
@@ -3081,7 +2955,6 @@ body {
         0 0 30px rgba(255, 122, 26, 0.38) !important;
 }
 
-/* mobile: без бокового сдвига, чтобы не дергалось */
 @media (max-width: 767px) {
 
     .model-pipe-route,
@@ -3098,10 +2971,6 @@ body {
         height: 2px !important;
     }
 }
-
-/* =========================================================
-   MODEL PIPE BOARD — MORE SPACE FOR TITLE
-========================================================= */
 
 .model-pipe-board__layout {
     grid-template-columns: minmax(420px, 0.62fr) minmax(360px, 0.78fr) !important;
@@ -3120,19 +2989,16 @@ body {
     max-width: 600px !important;
 }
 
-/* правый блок делаем уже */
 .model-pipe-board__routes {
     max-width: 720px !important;
     justify-self: end !important;
     width: 100% !important;
 }
 
-/* чтобы правые строки не растягивались слишком широко */
 .model-pipe-route p {
     max-width: 520px !important;
 }
 
-/* смещения делаем мягче, чтобы блок не разъезжался вправо */
 .model-pipe-route:nth-child(even) {
     transform: translateX(22px) !important;
 }
@@ -3141,7 +3007,6 @@ body {
     transform: translateX(30px) !important;
 }
 
-/* TABLET */
 @media (max-width: 1023px) {
     .model-pipe-board__layout {
         grid-template-columns: 1fr !important;
@@ -3169,11 +3034,6 @@ body {
     }
 }
 
-/* =========================================================
-   ABOUT MARQUEE — DARK COMPACT VERSION
-   paste at the very bottom of style.css
-========================================================= */
-
 .about-marquee.marquee-section {
     position: relative;
     overflow: hidden;
@@ -3190,7 +3050,6 @@ body {
         inset 0 -1px 0 rgba(255, 255, 255, 0.04) !important;
 }
 
-/* тёмные fade-края */
 .about-marquee.marquee-section::before,
 .about-marquee.marquee-section::after {
     content: "";
@@ -3212,7 +3071,6 @@ body {
     background: linear-gradient(270deg, #071826, transparent);
 }
 
-/* строка ниже и плотнее */
 .about-marquee .marquee-section__row {
     display: flex !important;
     overflow: hidden !important;
@@ -3220,7 +3078,6 @@ body {
     background: transparent !important;
 }
 
-/* трек */
 .about-marquee .marquee-section__track {
     flex: 0 0 auto !important;
     display: flex !important;
@@ -3234,7 +3091,6 @@ body {
     animation-play-state: paused;
 }
 
-/* элементы */
 .about-marquee .marquee-section__track a {
     position: relative;
     display: inline-flex !important;
@@ -3260,7 +3116,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* разделитель */
 .about-marquee .marquee-section__track a::after {
     content: "";
     width: 7px !important;
@@ -3271,7 +3126,6 @@ body {
     box-shadow: 0 0 16px rgba(255, 122, 26, 0.72) !important;
 }
 
-/* иконки */
 .about-marquee .marquee-section__track a i,
 .about-marquee .marquee-section__track a svg {
     display: grid !important;
@@ -3311,7 +3165,6 @@ body {
         0 0 24px rgba(255, 122, 26, 0.26) !important;
 }
 
-/* mobile */
 @media (max-width: 767px) {
     .about-marquee.marquee-section {
         padding: 7px 0 !important;
@@ -3348,10 +3201,6 @@ body {
     }
 }
 
-/* =========================================================
-   ABOUT MARQUEE — BRIGHT CONTENT FIX
-========================================================= */
-
 .about-marquee.marquee-section .marquee-section__track a {
     color: #ffffff !important;
     opacity: 1 !important;
@@ -3361,14 +3210,12 @@ body {
         0 0 18px rgba(255, 255, 255, 0.08);
 }
 
-/* чтобы текст точно не был серым от старых стилей */
 .about-marquee.marquee-section .marquee-section__track a,
 .about-marquee.marquee-section .marquee-section__track a:visited,
 .about-marquee.marquee-section .marquee-section__track a:active {
     color: #ffffff !important;
 }
 
-/* иконки делаем ярче */
 .about-marquee.marquee-section .marquee-section__track a i,
 .about-marquee.marquee-section .marquee-section__track a svg {
     color: var(--color-orange) !important;
@@ -3384,7 +3231,6 @@ body {
         inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
 }
 
-/* разделитель ярче */
 .about-marquee.marquee-section .marquee-section__track a::after {
     background: var(--color-orange) !important;
     box-shadow:
@@ -3392,7 +3238,6 @@ body {
         0 0 24px rgba(255, 122, 26, 0.5) !important;
 }
 
-/* hover — прям сочный */
 .about-marquee.marquee-section .marquee-section__track a:hover {
     color: var(--color-orange-hover) !important;
     text-shadow:
@@ -3414,7 +3259,6 @@ body {
         0 0 30px rgba(255, 122, 26, 0.42) !important;
 }
 
-/* можно чуть увеличить контент, чтобы был заметнее */
 .about-marquee.marquee-section .marquee-section__track a {
     font-size: clamp(1.05rem, 1.65vw, 1.48rem) !important;
 }
@@ -3426,7 +3270,6 @@ body {
     min-width: 42px !important;
 }
 
-/* mobile */
 @media (max-width: 767px) {
     .about-marquee.marquee-section .marquee-section__track a {
         font-size: 0.92rem !important;

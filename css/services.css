@@ -1,7 +1,3 @@
-/* ================================
-   SERVICES PAGE HERO
-================================ */
-
 .services-hero {
     min-height: clamp(430px, 58vw, 620px);
 }
@@ -10,10 +6,6 @@
     background-position: center;
     background-size: cover;
 }
-
-/* ================================
-   SERVICES OVERVIEW
-================================ */
 
 .services-overview {
     background:
@@ -119,10 +111,6 @@
     font-size: 14px;
     line-height: 1.5;
 }
-
-/* ================================
-   SERVICES CARDS SECTION
-================================ */
 
 .services-cards-section {
     background:
@@ -288,10 +276,6 @@
     transform: scaleX(1);
 }
 
-/* ================================
-   SERVICE FIT
-================================ */
-
 .service-fit {
     background:
         radial-gradient(circle at 10% 10%, rgba(255, 225, 199, 0.68), transparent 30%),
@@ -400,10 +384,6 @@
     height: 17px;
 }
 
-/* ================================
-   COMPARISON FACTORS
-================================ */
-
 .comparison-factors {
     background:
         radial-gradient(circle at 0% 20%, rgba(221, 234, 243, 0.9), transparent 32%),
@@ -502,10 +482,6 @@
     line-height: 1.48;
 }
 
-/* ================================
-   SERVICES CTA
-================================ */
-
 .services-cta {
     padding-top: clamp(54px, 7vw, 90px);
     padding-bottom: clamp(54px, 7vw, 90px);
@@ -514,10 +490,6 @@
 .services-cta .cta-card::before {
     background-image: inherit;
 }
-
-/* ================================
-   RESPONSIVE
-================================ */
 
 @media (max-width: 1180px) {
     .services-cards-grid {
@@ -657,10 +629,6 @@
     }
 }
 
-/* ================================
-   SERVICES HERO — MODERN PREMIUM
-================================ */
-
 .services-hero {
     position: relative;
     isolation: isolate;
@@ -675,7 +643,6 @@
     background-color: #101214;
 }
 
-/* затемнение фото */
 .services-hero::before {
     content: "";
     position: absolute;
@@ -688,7 +655,6 @@
     pointer-events: none;
 }
 
-/* сетка */
 .services-hero::after {
     content: "";
     position: absolute;
@@ -702,7 +668,6 @@
     pointer-events: none;
 }
 
-/* закругленный низ */
 .services-hero .container-wide::after {
     content: "";
     position: absolute;
@@ -788,7 +753,6 @@
     box-shadow: 0 0 14px rgba(255, 122, 26, 0.7);
 }
 
-/* right visual */
 .services-hero__visual {
     position: relative;
     display: grid;
@@ -903,7 +867,6 @@
     line-height: 1.12;
 }
 
-/* buttons */
 .services-hero .button--secondary {
     color: var(--color-white);
     border-color: rgba(255, 255, 255, 0.18);
@@ -928,10 +891,6 @@
         opacity: 0;
     }
 }
-
-/* ================================
-   SERVICES HERO RESPONSIVE
-================================ */
 
 @media (max-width: 1023px) {
     .services-hero {
@@ -1029,10 +988,6 @@
     }
 }
 
-/* ================================
-   SERVICES HERO — PHOTO VISUAL FINAL
-================================ */
-
 .services-hero {
     min-height: auto !important;
     padding-top: clamp(118px, 11vw, 158px) !important;
@@ -1048,13 +1003,11 @@
     padding-bottom: 26px;
 }
 
-/* чтобы низ не съедал контент */
 .services-hero .container-wide::after {
     bottom: -180px !important;
     height: 250px !important;
 }
 
-/* old board reset */
 .services-hero__visual {
     position: relative;
     isolation: isolate;
@@ -1077,7 +1030,6 @@
     overflow: visible !important;
 }
 
-/* glow behind photo */
 .services-hero__visual::before {
     content: "";
     position: absolute;
@@ -1092,7 +1044,6 @@
     pointer-events: none;
 }
 
-/* shine */
 .services-hero__visual::after {
     content: "";
     position: absolute;
@@ -1120,7 +1071,6 @@
         0 22px 58px rgba(0, 0, 0, 0.3);
 }
 
-/* labels */
 .services-hero__photo-label {
     position: absolute;
     z-index: 5;
@@ -1163,16 +1113,11 @@
     bottom: 66px;
 }
 
-/* убираем старые ненужные элементы, если случайно остались */
 .services-hero__card,
 .services-hero__mini-grid,
 .services-hero__mini {
     display: none !important;
 }
-
-/* ================================
-   SERVICES HERO PHOTO RESPONSIVE
-================================ */
 
 @media (max-width: 1023px) {
     .services-hero {
@@ -1284,23 +1229,17 @@
     }
 }
 
-/* ================================
-   SERVICES HERO — DARK ONLY + ROUNDED BOTTOM FINAL
-================================ */
-
 section.services-hero#services-hero {
     position: relative !important;
     isolation: isolate !important;
     min-height: auto !important;
 
-    /* больше места снизу, чтобы кнопки точно влезали */
     padding-top: clamp(118px, 10vw, 158px) !important;
     padding-bottom: clamp(110px, 10vw, 150px) !important;
 
     color: var(--color-white) !important;
     overflow: hidden !important;
 
-    /* закругление именно самой секции */
     border-radius: 0 0 clamp(42px, 7vw, 96px) clamp(42px, 7vw, 96px) !important;
 
     background:
@@ -1310,18 +1249,15 @@ section.services-hero#services-hero {
         #101214 !important;
 }
 
-/* полностью убираем старую белую дугу */
 section.services-hero#services-hero>.container-wide::after {
     display: none !important;
     content: none !important;
 }
 
-/* убираем chips */
 section.services-hero#services-hero .services-hero__chips {
     display: none !important;
 }
 
-/* layout */
 section.services-hero#services-hero .services-hero__layout {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) minmax(300px, 420px) !important;
@@ -1329,7 +1265,6 @@ section.services-hero#services-hero .services-hero__layout {
     gap: clamp(42px, 6vw, 82px) !important;
 }
 
-/* контент */
 section.services-hero#services-hero .services-hero__content {
     position: relative !important;
     z-index: 10 !important;
@@ -1354,7 +1289,6 @@ section.services-hero#services-hero .page-hero__text {
     line-height: 1.62 !important;
 }
 
-/* кнопки полностью на тёмном фоне */
 section.services-hero#services-hero .page-hero__actions {
     position: relative !important;
     z-index: 20 !important;
@@ -1377,7 +1311,6 @@ section.services-hero#services-hero .button--secondary {
     backdrop-filter: blur(12px) !important;
 }
 
-/* фото */
 section.services-hero#services-hero .services-hero__visual {
     position: relative !important;
     isolation: isolate !important;
@@ -1411,7 +1344,6 @@ section.services-hero#services-hero .services-hero__visual img {
     border-radius: 42% 58% 48% 52% / 54% 38% 62% 46% !important;
 }
 
-/* labels */
 section.services-hero#services-hero .services-hero__photo-label--top {
     top: 34px !important;
     left: 12px !important;
@@ -1422,7 +1354,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     bottom: 56px !important;
 }
 
-/* tablet */
 @media (max-width: 1023px) {
     section.services-hero#services-hero {
         padding-top: 106px !important;
@@ -1451,7 +1382,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     }
 }
 
-/* mobile */
 @media (max-width: 767px) {
     section.services-hero#services-hero {
         padding-top: 92px !important;
@@ -1488,10 +1418,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
         max-width: 330px !important;
     }
 }
-
-/* ================================
-   SERVICES PATH — CLEAN PREMIUM RAIL
-================================ */
 
 .services-path {
     position: relative;
@@ -1563,7 +1489,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     line-height: 1.62;
 }
 
-/* one premium horizontal rail */
 .services-path__rail {
     position: relative;
     display: grid;
@@ -1580,7 +1505,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     backdrop-filter: blur(16px);
 }
 
-/* orange top accent */
 .services-path__rail::before {
     content: "";
     position: absolute;
@@ -1599,7 +1523,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     pointer-events: none;
 }
 
-/* subtle line through the rail */
 .services-path__rail::after {
     content: "";
     position: absolute;
@@ -1681,7 +1604,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     transform-origin: left;
 }
 
-/* big quiet numbers */
 .services-path__count {
     position: absolute;
     right: 26px;
@@ -1753,10 +1675,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     font-size: 14px;
     line-height: 1.52;
 }
-
-/* ================================
-   SERVICES PATH RESPONSIVE
-================================ */
 
 @media (max-width: 1023px) {
     .services-path__head {
@@ -1896,10 +1814,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     }
 }
 
-/* ================================
-   SERVICES CARDS — SPLIT PHOTO / TEXT LAYOUT
-================================ */
-
 .services-cards-section {
     position: relative;
     overflow: hidden;
@@ -1925,7 +1839,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     gap: 18px !important;
 }
 
-/* каждая услуга = строка из двух отдельных карточек */
 .services-card,
 .services-card:nth-child(1),
 .services-card:nth-child(2),
@@ -1947,7 +1860,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     transform: none !important;
 }
 
-/* чётные строки наоборот: текст слева, фото справа */
 .services-card:nth-child(even) {
     grid-template-columns: minmax(0, 0.52fr) minmax(260px, 0.48fr) !important;
 }
@@ -1960,7 +1872,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     order: 1;
 }
 
-/* отключаем старые overlay/shine на общей карточке */
 .services-card::before,
 .services-card::after {
     display: none !important;
@@ -1972,7 +1883,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     box-shadow: none !important;
 }
 
-/* ФОТО-КАРТОЧКА */
 .services-card__image {
     position: relative !important;
     inset: auto !important;
@@ -2025,7 +1935,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     transform: translateX(130%) skewX(-18deg);
 }
 
-/* разные формы фото, но без съедания контента */
 .services-card:nth-child(1) .services-card__image {
     border-radius: 44px 96px 44px 44px !important;
 }
@@ -2042,7 +1951,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     border-radius: 44px 44px 96px 44px !important;
 }
 
-/* ТЕКСТОВАЯ КАРТОЧКА */
 .services-card__content {
     position: relative !important;
     z-index: 2 !important;
@@ -2067,7 +1975,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     overflow: hidden;
 }
 
-/* декоративная линия снизу */
 .services-card__content::before {
     content: "";
     position: absolute;
@@ -2087,7 +1994,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     transform-origin: left;
 }
 
-/* иконка справа сверху */
 .services-card__content>i,
 .services-card__content>svg {
     position: absolute !important;
@@ -2142,7 +2048,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     line-height: 1.55 !important;
 }
 
-/* кнопка-ссылка */
 .services-card__content em {
     display: inline-flex !important;
     align-items: center;
@@ -2189,10 +2094,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
 .services-card:hover .services-card__content em::after {
     transform: translateX(3px) !important;
 }
-
-/* ================================
-   RESPONSIVE
-================================ */
 
 @media (max-width: 1023px) {
 
@@ -2281,10 +2182,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     }
 }
 
-/* ================================
-   SERVICE FIT — BRIGHT MATCH BOARD FINAL
-================================ */
-
 .service-fit {
     position: relative;
     overflow: hidden;
@@ -2330,7 +2227,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     margin-bottom: clamp(28px, 4vw, 46px) !important;
 }
 
-/* общий горизонтальный board */
 .service-fit__list {
     display: grid !important;
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
@@ -2343,7 +2239,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     overflow: visible !important;
 }
 
-/* отдельные яркие light-блоки */
 .service-fit__row {
     position: relative;
     isolation: isolate;
@@ -2369,7 +2264,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
         background var(--transition-base);
 }
 
-/* ВАЖНО: полностью убираем старые цифры */
 .service-fit__row::after {
     content: "" !important;
     position: absolute;
@@ -2383,7 +2277,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     pointer-events: none;
 }
 
-/* верхняя сочная линия */
 .service-fit__row::before {
     content: "" !important;
     position: absolute !important;
@@ -2432,7 +2325,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     line-height: 1.5;
 }
 
-/* кнопка снизу */
 .service-fit__row a {
     position: relative;
     z-index: 2;
@@ -2481,7 +2373,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     transform: translateX(3px);
 }
 
-/* лёгкое разнообразие без цифр */
 .service-fit__row:nth-child(2) {
     transform: translateY(16px);
 }
@@ -2494,10 +2385,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
 .service-fit__row:nth-child(4):hover {
     transform: translateY(8px);
 }
-
-/* ================================
-   SERVICE FIT RESPONSIVE
-================================ */
 
 @media (max-width: 1180px) {
     .service-fit__list {
@@ -2554,10 +2441,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     }
 }
 
-/* ================================
-   COMPARISON FACTORS — PHOTO + CLEAN LIST
-================================ */
-
 .comparison-factors {
     position: relative;
     overflow: hidden;
@@ -2601,8 +2484,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     align-items: center !important;
     gap: clamp(34px, 6vw, 84px) !important;
 }
-
-/* LEFT PHOTO CARD */
 
 .comparison-factors__photo {
     position: relative;
@@ -2696,8 +2577,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     color: var(--color-orange);
 }
 
-/* RIGHT CONTENT */
-
 .comparison-factors__content {
     min-width: 0;
 }
@@ -2716,8 +2595,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
 .comparison-factors__content .section-heading p {
     max-width: 720px;
 }
-
-/* CLEAN LIST — NO CARDS, NO NUMBERS */
 
 .comparison-factors__list {
     display: grid !important;
@@ -2746,7 +2623,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     border-bottom: 0 !important;
 }
 
-/* hover line */
 .comparison-factors__list article::after {
     content: "";
     position: absolute;
@@ -2814,10 +2690,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     font-size: 14px !important;
     line-height: 1.48;
 }
-
-/* ================================
-   RESPONSIVE
-================================ */
 
 @media (max-width: 1023px) {
     .comparison-factors__layout {
@@ -2901,10 +2773,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
         border-radius: 14px;
     }
 }
-
-/* ================================
-   BIG ICON MARQUEE
-================================ */
 
 .icon-marquee {
     position: relative;
@@ -3002,7 +2870,6 @@ section.services-hero#services-hero .services-hero__photo-label--bottom {
     }
 }
 
-/* mobile */
 @media (max-width: 767px) {
     .icon-marquee {
         padding: 18px 0;

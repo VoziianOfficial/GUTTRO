@@ -1,7 +1,3 @@
-/* ================================
-   CONTACT HERO
-================================ */
-
 .contact-hero {
     min-height: clamp(430px, 58vw, 620px);
 }
@@ -10,10 +6,6 @@
     background-position: center;
     background-size: cover;
 }
-
-/* ================================
-   CONTACT OPTIONS
-================================ */
 
 .contact-options {
     background:
@@ -141,10 +133,6 @@
     line-height: 1.45;
 }
 
-/* ================================
-   CONTACT FORM SECTION
-================================ */
-
 .contact-form-section {
     background:
         radial-gradient(circle at 10% 12%, rgba(255, 225, 199, 0.68), transparent 30%),
@@ -226,10 +214,6 @@
     font-size: 12px;
     line-height: 1.55;
 }
-
-/* ================================
-   AFTER REQUEST
-================================ */
 
 .after-request {
     background:
@@ -331,10 +315,6 @@
     line-height: 1.48;
 }
 
-/* ================================
-   CONTACT FAQ
-================================ */
-
 .contact-faq {
     background:
         radial-gradient(circle at 10% 0%, rgba(255, 225, 199, 0.55), transparent 30%),
@@ -347,10 +327,6 @@
     margin-inline: auto;
 }
 
-/* ================================
-   CONTACT CTA
-================================ */
-
 .contact-cta {
     padding-top: clamp(54px, 7vw, 90px);
     padding-bottom: clamp(54px, 7vw, 90px);
@@ -359,10 +335,6 @@
 .contact-cta .cta-card::before {
     background-image: inherit;
 }
-
-/* ================================
-   VALIDATION STATES
-================================ */
 
 .form-input.is-invalid,
 .form-select.is-invalid,
@@ -381,10 +353,6 @@
 .form-textarea.is-valid {
     border-color: rgba(21, 132, 78, 0.72);
 }
-
-/* ================================
-   RESPONSIVE
-================================ */
 
 @media (max-width: 1180px) {
     .contact-options__grid {
@@ -527,10 +495,6 @@
     transform: none;
 }
 
-/* =========================================================
-   CONTACT HERO — SIGNAL REQUEST DESIGN
-========================================================= */
-
 .contact-signal-hero {
     position: relative;
     isolation: isolate;
@@ -643,8 +607,6 @@
     height: 16px !important;
     color: var(--color-orange);
 }
-
-/* RIGHT VISUAL */
 
 .contact-signal-hero__visual {
     position: relative;
@@ -810,8 +772,6 @@
     }
 }
 
-/* TABLET */
-
 @media (max-width: 1023px) {
     .contact-signal-hero__layout {
         grid-template-columns: 1fr;
@@ -840,8 +800,6 @@
         top: 310px;
     }
 }
-
-/* MOBILE */
 
 @media (max-width: 767px) {
     .contact-signal-hero {
@@ -922,14 +880,12 @@
     }
 }
 
-/* Hide contact hero mini badges on mobile */
 @media (max-width: 767px) {
     .contact-signal-hero__mini {
         display: none !important;
     }
 }
 
-/* Hide contact hero extra elements on mobile */
 @media (max-width: 767px) {
 
     .contact-signal-hero__mini,
@@ -937,10 +893,6 @@
         display: none !important;
     }
 }
-
-/* =========================================================
-   CONTACT OPTIONS — COMPACT SHINY CARDS
-========================================================= */
 
 .contact-options {
     padding-top: clamp(46px, 6vw, 76px) !important;
@@ -961,7 +913,6 @@
     gap: 14px !important;
 }
 
-/* compact card */
 .contact-option {
     position: relative;
     isolation: isolate;
@@ -989,7 +940,6 @@
         background var(--transition-base);
 }
 
-/* shine */
 .contact-option::before {
     content: "";
     position: absolute;
@@ -1006,7 +956,6 @@
     transition: transform 760ms ease, opacity 260ms ease;
 }
 
-/* small juicy corner */
 .contact-option::after {
     content: "";
     position: absolute;
@@ -1036,7 +985,6 @@
     opacity: 1;
 }
 
-/* icon on the right */
 .contact-option>i,
 .contact-option>svg {
     grid-column: 2 !important;
@@ -1081,7 +1029,6 @@
         0 0 26px rgba(255, 122, 26, 0.28) !important;
 }
 
-/* text */
 .contact-option span {
     grid-column: 1 !important;
     position: relative;
@@ -1112,7 +1059,6 @@
     color: var(--color-orange-dark) !important;
 }
 
-/* TABLET */
 @media (max-width: 1023px) {
     .contact-options__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -1123,7 +1069,6 @@
     }
 }
 
-/* MOBILE */
 @media (max-width: 767px) {
     .contact-options {
         padding-top: 42px !important;
@@ -1157,10 +1102,6 @@
         font-size: 12.5px !important;
     }
 }
-
-/* =========================================================
-   REQUEST STATUS DARK — AFTER REQUEST SECTION
-========================================================= */
 
 .request-status-dark {
     position: relative;
@@ -1232,8 +1173,6 @@
     font-size: clamp(1rem, 1.25vw, 1.08rem);
     line-height: 1.62;
 }
-
-/* RIGHT BOARD */
 
 .request-status-dark__board {
     position: relative;
@@ -1360,8 +1299,6 @@
         0 0 32px rgba(255, 122, 26, 0.38);
 }
 
-/* text block */
-
 .request-status-dark__item div {
     position: relative;
     min-width: 0;
@@ -1420,8 +1357,6 @@
     line-height: 1.5;
 }
 
-/* TABLET */
-
 @media (max-width: 1023px) {
     .request-status-dark__layout {
         grid-template-columns: 1fr;
@@ -1453,8 +1388,6 @@
         margin-left: 48px;
     }
 }
-
-/* MOBILE */
 
 @media (max-width: 767px) {
     .request-status-dark {
@@ -1531,10 +1464,6 @@
     }
 }
 
-/* =========================================================
-   REQUEST STATUS DARK — NARROWER RIGHT BLOCK
-========================================================= */
-
 .request-status-dark__layout {
     grid-template-columns: minmax(420px, 0.6fr) minmax(360px, 0.78fr) !important;
     gap: clamp(32px, 5vw, 76px) !important;
@@ -1552,19 +1481,16 @@
     max-width: 610px !important;
 }
 
-/* правый блок уже */
 .request-status-dark__board {
     max-width: 720px !important;
     width: 100% !important;
     justify-self: end !important;
 }
 
-/* сами строки не растягиваются слишком широко */
 .request-status-dark__item div {
     max-width: 560px !important;
 }
 
-/* ступеньки делаем мягче, чтобы правый блок не уезжал слишком широко */
 .request-status-dark__item--two {
     margin-left: 36px !important;
 }
@@ -1573,7 +1499,6 @@
     margin-left: 72px !important;
 }
 
-/* TABLET */
 @media (max-width: 1023px) {
     .request-status-dark__layout {
         grid-template-columns: 1fr !important;
@@ -1601,10 +1526,6 @@
         margin-left: 0 !important;
     }
 }
-
-/* =========================================================
-   PRE FORM SIGNAL — SMALL DARK SECTION
-========================================================= */
 
 .pre-form-signal {
     position: relative;
@@ -1680,8 +1601,6 @@
     line-height: 1.55;
 }
 
-/* right points */
-
 .pre-form-signal__points {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1745,8 +1664,6 @@
     justify-self: end;
 }
 
-/* tablet */
-
 @media (max-width: 1023px) {
     .pre-form-signal__inner {
         grid-template-columns: 1fr;
@@ -1768,8 +1685,6 @@
         justify-self: center;
     }
 }
-
-/* mobile */
 
 @media (max-width: 767px) {
     .pre-form-signal {
@@ -1803,10 +1718,6 @@
     }
 }
 
-/* =========================================================
-   CONTACT SIGNAL HERO — BACKGROUND PHOTO
-========================================================= */
-
 .contact-signal-hero {
     background:
         linear-gradient(90deg,
@@ -1819,7 +1730,6 @@
         url("../assets/images/contact-gutters.jpg") center / cover no-repeat !important;
 }
 
-/* чтобы фото было объемнее, но не мешало тексту */
 .contact-signal-hero::before {
     background:
         linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
@@ -1828,13 +1738,11 @@
     background-size: 78px 78px, 78px 78px, auto !important;
 }
 
-/* затемнение под текстом слева */
 .contact-signal-hero__content {
     position: relative;
     z-index: 3;
 }
 
-/* если справа визуальные beam-блоки стали плохо читаться */
 .contact-signal-hero__beam {
     background:
         linear-gradient(90deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045)),
@@ -1842,7 +1750,6 @@
     backdrop-filter: blur(18px);
 }
 
-/* mobile — фото затемняем сильнее */
 @media (max-width: 767px) {
     .contact-signal-hero {
         background:

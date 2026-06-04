@@ -1,7 +1,3 @@
-/* ================================
-   SERVICE DETAIL HERO
-================================ */
-
 .service-hero {
     min-height: clamp(430px, 58vw, 620px);
 }
@@ -10,10 +6,6 @@
     background-position: center;
     background-size: cover;
 }
-
-/* ================================
-   SERVICE INTRO
-================================ */
 
 .service-intro {
     background:
@@ -111,10 +103,6 @@
     object-fit: cover;
 }
 
-/* ================================
-   RELEVANCE SECTION
-================================ */
-
 .service-relevance {
     background:
         radial-gradient(circle at 10% 12%, rgba(255, 225, 199, 0.68), transparent 30%),
@@ -201,10 +189,6 @@
     transform: translateY(-3px) rotate(-4deg);
     filter: drop-shadow(0 0 13px rgba(255, 122, 26, 0.42));
 }
-
-/* ================================
-   PROVIDER EVALUATION
-================================ */
 
 .provider-evaluation {
     background:
@@ -304,10 +288,6 @@
     line-height: 1.48;
 }
 
-/* ================================
-   THEMATIC VISUAL
-================================ */
-
 .service-visual {
     color: var(--color-white);
     background:
@@ -396,10 +376,6 @@
     object-fit: cover;
 }
 
-/* ================================
-   SERVICE FAQ
-================================ */
-
 .service-faq {
     background:
         radial-gradient(circle at 10% 0%, rgba(255, 225, 199, 0.55), transparent 30%),
@@ -412,10 +388,6 @@
     margin-inline: auto;
 }
 
-/* ================================
-   SERVICE CTA
-================================ */
-
 .service-cta {
     padding-top: clamp(54px, 7vw, 90px);
     padding-bottom: clamp(54px, 7vw, 90px);
@@ -424,10 +396,6 @@
 .service-cta .cta-card::before {
     background-image: inherit;
 }
-
-/* ================================
-   RELATED SERVICES
-================================ */
 
 .related-services {
     background:
@@ -513,10 +481,6 @@
     color: var(--color-text-soft);
     font-size: 13px;
 }
-
-/* ================================
-   RESPONSIVE
-================================ */
 
 @media (max-width: 1180px) {
     .provider-evaluation__item {
@@ -720,10 +684,6 @@
     }
 }
 
-/* =========================================================
-   RELEVANCE BRIEF DARK — COMPACT PREMIUM VERSION
-========================================================= */
-
 .relevance-brief-dark {
     position: relative;
     isolation: isolate;
@@ -795,8 +755,6 @@
     font-size: clamp(0.95rem, 1.2vw, 1.04rem);
     line-height: 1.58;
 }
-
-/* right list — compact, no cards */
 
 .relevance-brief-dark__list {
     position: relative;
@@ -903,8 +861,6 @@
     line-height: 1.45;
 }
 
-/* TABLET */
-
 @media (max-width: 1023px) {
     .relevance-brief-dark__layout {
         grid-template-columns: 1fr;
@@ -927,8 +883,6 @@
         margin-inline: auto;
     }
 }
-
-/* MOBILE */
 
 @media (max-width: 767px) {
     .relevance-brief-dark {
@@ -973,11 +927,6 @@
         font-size: 12.7px;
     }
 }
-
-/* =========================================================
-   EVALUATION EDITORIAL — OPEN HORIZONTAL SECTION
-   no cards, no panels, no boxes
-========================================================= */
 
 .evaluation-editorial {
     position: relative;
@@ -1029,8 +978,6 @@
     font-size: clamp(0.98rem, 1.2vw, 1.05rem);
     line-height: 1.6;
 }
-
-/* open horizontal rail */
 
 .evaluation-editorial__rail {
     position: relative;
@@ -1101,7 +1048,6 @@
     transform-origin: left;
 }
 
-/* icon without bubble/card */
 .evaluation-editorial__rail i,
 .evaluation-editorial__rail svg {
     width: 30px !important;
@@ -1140,7 +1086,6 @@
     line-height: 1.42;
 }
 
-/* tablet */
 @media (max-width: 1023px) {
     .evaluation-editorial__rail {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1155,7 +1100,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 767px) {
     .evaluation-editorial {
         padding: 42px 0 46px;
@@ -1210,10 +1154,6 @@
     }
 }
 
-/* =========================================================
-   SERVICE SPLIT DARK — PHOTO CARD + TEXT CARD
-========================================================= */
-
 .service-split-dark {
     position: relative;
     isolation: isolate;
@@ -1261,14 +1201,11 @@
     gap: clamp(18px, 3vw, 34px);
 }
 
-/* same size cards */
 .service-split-dark__photo,
 .service-split-dark__card {
     min-height: clamp(360px, 38vw, 480px);
     border-radius: 38px;
 }
-
-/* LEFT PHOTO CARD */
 
 .service-split-dark__photo {
     position: relative;
@@ -1339,8 +1276,6 @@
     transform: scale(1.09);
     filter: saturate(1.18) contrast(1.12);
 }
-
-/* RIGHT TEXT CARD */
 
 .service-split-dark__card {
     position: relative;
@@ -1426,8 +1361,6 @@
     line-height: 1.62;
 }
 
-/* chips */
-
 .service-split-dark__chips {
     display: flex;
     flex-wrap: wrap;
@@ -1470,8 +1403,6 @@
     color: var(--color-white);
     background: rgba(255, 122, 26, 0.12);
 }
-
-/* responsive */
 
 @media (max-width: 1023px) {
     .service-split-dark__layout {
@@ -1519,11 +1450,6 @@
     }
 }
 
-/* =========================================================
-   GUTTER ICONS FULL — STATIC DARK ICON STRIP
-   no movement, no icon background circles
-========================================================= */
-
 .gutter-icons-full {
     position: relative;
     isolation: isolate;
@@ -1560,8 +1486,6 @@
     pointer-events: none;
 }
 
-/* rows */
-
 .gutter-icons-full__row {
     width: 100%;
 }
@@ -1569,8 +1493,6 @@
 .gutter-icons-full__row+.gutter-icons-full__row {
     margin-top: clamp(18px, 2.4vw, 30px);
 }
-
-/* static grid, no animation */
 
 .gutter-icons-full__track {
     display: grid;
@@ -1585,12 +1507,9 @@
     transform: none !important;
 }
 
-/* убираем вторые дубликаты, чтобы не было слишком много */
 .gutter-icons-full__track span:nth-child(n + 9) {
     display: none;
 }
-
-/* icon wrapper — no circle, no bg */
 
 .gutter-icons-full span {
     position: relative;
@@ -1619,8 +1538,6 @@
     box-shadow: none !important;
 }
 
-/* icons only */
-
 .gutter-icons-full i,
 .gutter-icons-full svg {
     width: clamp(48px, 5vw, 82px) !important;
@@ -1643,7 +1560,6 @@
         drop-shadow(0 16px 30px rgba(0, 0, 0, 0.42)) drop-shadow(0 0 26px rgba(255, 122, 26, 0.55));
 }
 
-/* немного разный размер, чтобы не было скучной сетки */
 .gutter-icons-full__row--one span:nth-child(2) svg,
 .gutter-icons-full__row--one span:nth-child(5) svg,
 .gutter-icons-full__row--two span:nth-child(3) svg,
@@ -1651,8 +1567,6 @@
     width: clamp(58px, 6vw, 96px) !important;
     height: clamp(58px, 6vw, 96px) !important;
 }
-
-/* tablet */
 
 @media (max-width: 1023px) {
     .gutter-icons-full__track {
@@ -1664,8 +1578,6 @@
         display: none;
     }
 }
-
-/* mobile */
 
 @media (max-width: 767px) {
     .gutter-icons-full {
@@ -1697,10 +1609,6 @@
     }
 }
 
-/* =========================================================
-   GUTTER ICONS FULL — ONE STATIC ROW, PURE DARK
-========================================================= */
-
 .gutter-icons-full {
     position: relative;
     overflow: hidden;
@@ -1710,14 +1618,12 @@
     background: linear-gradient(180deg, #050505 0%, #0b0b0d 100%) !important;
 }
 
-/* убираем сетку/синие свечения/оверлеи */
 .gutter-icons-full::before,
 .gutter-icons-full::after {
     display: none !important;
     content: none !important;
 }
 
-/* оставляем только первый ряд */
 .gutter-icons-full__row--two {
     display: none !important;
 }
@@ -1726,7 +1632,6 @@
     width: 100%;
 }
 
-/* один ряд */
 .gutter-icons-full__track {
     display: flex !important;
     align-items: center !important;
@@ -1739,12 +1644,10 @@
     transform: none !important;
 }
 
-/* убираем дубликаты после 8-й иконки */
 .gutter-icons-full__track span:nth-child(n + 9) {
     display: none !important;
 }
 
-/* никаких кругов/фона у иконок */
 .gutter-icons-full span {
     display: grid;
     place-items: center;
@@ -1763,7 +1666,6 @@
     content: none !important;
 }
 
-/* сами иконки */
 .gutter-icons-full i,
 .gutter-icons-full svg {
     width: clamp(48px, 5vw, 86px) !important;
@@ -1778,7 +1680,6 @@
         filter var(--transition-base);
 }
 
-/* hover */
 .gutter-icons-full span:hover {
     transform: translateY(-7px) scale(1.1);
 }
@@ -1791,7 +1692,6 @@
         drop-shadow(0 14px 26px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 26px rgba(255, 122, 26, 0.55));
 }
 
-/* tablet */
 @media (max-width: 1023px) {
     .gutter-icons-full__track {
         gap: clamp(20px, 3vw, 42px) !important;
@@ -1804,7 +1704,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 767px) {
     .gutter-icons-full {
         padding: 24px 0;
@@ -1830,10 +1729,6 @@
     }
 }
 
-/* =========================================================
-   SERVICE FAQ — TWO STABLE COLUMNS
-========================================================= */
-
 .service-faq .faq-list.service-faq__columns {
     width: min(100%, 1040px) !important;
     margin-inline: auto !important;
@@ -1849,12 +1744,10 @@
     align-content: start;
 }
 
-/* чтобы открытие не дергало вторую колонку */
 .service-faq__column .faq-item {
     width: 100%;
 }
 
-/* делаем вопросы компактнее и аккуратнее */
 .service-faq .faq-item {
     overflow: hidden;
     border-radius: 24px;
@@ -1869,7 +1762,6 @@
     overflow: hidden;
 }
 
-/* mobile */
 @media (max-width: 767px) {
     .service-faq .faq-list.service-faq__columns {
         grid-template-columns: 1fr !important;
@@ -1885,23 +1777,17 @@
     }
 }
 
-/* =========================================================
-   SERVICE FAQ — WIDER AND LOWER QUESTIONS
-========================================================= */
-
 .service-faq .faq-list.service-faq__columns {
     width: min(100%, 1180px) !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 14px 18px !important;
 }
 
-/* ниже карточки */
 .service-faq .faq-item {
     min-height: 66px !important;
     border-radius: 22px !important;
 }
 
-/* ниже сама строка вопроса */
 .service-faq .faq-question {
     min-height: 66px !important;
     height: 66px !important;
@@ -1912,7 +1798,6 @@
     gap: 12px !important;
 }
 
-/* текст делаем больше в длину, не в высоту */
 .service-faq .faq-question span:not(.faq-question__plus) {
     display: block !important;
     overflow: hidden !important;
@@ -1921,20 +1806,17 @@
     line-height: 1.15 !important;
 }
 
-/* иконка компактнее */
 .service-faq .faq-question__icon {
     width: 22px !important;
     height: 22px !important;
 }
 
-/* плюс компактнее */
 .service-faq .faq-question__plus {
     width: 20px !important;
     height: 20px !important;
     justify-self: end !important;
 }
 
-/* ответ открывается нормально вниз */
 .service-faq .faq-answer {
     overflow: hidden !important;
 }
@@ -1945,14 +1827,12 @@
     line-height: 1.5 !important;
 }
 
-/* открытая карточка может быть выше, но вопрос остается низким */
 .service-faq .faq-item.is-active,
 .service-faq .faq-item.is-open,
 .service-faq .faq-item:has(.faq-question[aria-expanded="true"]) {
     min-height: auto !important;
 }
 
-/* tablet */
 @media (max-width: 1023px) {
     .service-faq .faq-list.service-faq__columns {
         width: min(100%, 960px) !important;
@@ -1965,7 +1845,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 767px) {
     .service-faq .faq-list.service-faq__columns {
         grid-template-columns: 1fr !important;

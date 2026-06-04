@@ -1,7 +1,3 @@
-/* ================================
-   ABOUT HERO
-================================ */
-
 .about-hero {
     min-height: clamp(430px, 58vw, 620px);
 }
@@ -10,10 +6,6 @@
     background-position: center;
     background-size: cover;
 }
-
-/* ================================
-   ABOUT STORY
-================================ */
 
 .about-story {
     background:
@@ -139,10 +131,6 @@
     letter-spacing: -0.03em;
 }
 
-/* ================================
-   ABOUT MODEL
-================================ */
-
 .about-model {
     background:
         radial-gradient(circle at 8% 12%, rgba(255, 225, 199, 0.7), transparent 30%),
@@ -242,18 +230,10 @@
     line-height: 1.48;
 }
 
-/* ================================
-   ABOUT MARQUEE
-================================ */
-
 .about-marquee .marquee-section__track a {
     min-height: 64px;
     font-size: clamp(1rem, 1.8vw, 1.65rem);
 }
-
-/* ================================
-   ABOUT CLARITY
-================================ */
 
 .about-clarity {
     background:
@@ -370,10 +350,6 @@
     line-height: 1.55;
 }
 
-/* ================================
-   ABOUT PROCESS
-================================ */
-
 .about-process {
     background:
         radial-gradient(circle at 0% 20%, rgba(221, 234, 243, 0.9), transparent 32%),
@@ -481,10 +457,6 @@
     line-height: 1.5;
 }
 
-/* ================================
-   ABOUT CTA
-================================ */
-
 .about-cta {
     padding-top: clamp(54px, 7vw, 90px);
     padding-bottom: clamp(54px, 7vw, 90px);
@@ -493,10 +465,6 @@
 .about-cta .cta-card::before {
     background-image: inherit;
 }
-
-/* ================================
-   RESPONSIVE
-================================ */
 
 @media (max-width: 1180px) {
     .about-model__path {
@@ -657,10 +625,6 @@
     transform: scale(1.06);
 }
 
-/* ================================
-   ABOUT HERO — DIAGONAL PHOTO STRIP
-================================ */
-
 .about-hero {
     position: relative;
     isolation: isolate;
@@ -743,7 +707,6 @@
     backdrop-filter: blur(12px);
 }
 
-/* bottom mini-line */
 .about-hero__line {
     display: flex;
     flex-wrap: wrap;
@@ -776,7 +739,6 @@
     color: var(--color-orange);
 }
 
-/* right visual — diagonal photo strips */
 .about-hero__visual {
     position: relative;
     isolation: isolate;
@@ -908,10 +870,6 @@
     }
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
-
 @media (max-width: 1023px) {
     .about-hero {
         padding: 108px 0 92px !important;
@@ -1039,10 +997,6 @@
     }
 }
 
-/* ================================
-   ABOUT STORY — CLEAN LINE LIST
-================================ */
-
 .about-story__visual {
     position: relative;
     display: grid !important;
@@ -1056,7 +1010,6 @@
     overflow: visible !important;
 }
 
-/* главная вертикальная линия */
 .about-story__visual::before {
     content: "";
     position: absolute;
@@ -1074,7 +1027,6 @@
             transparent);
 }
 
-/* убираем старые карточки */
 .about-story__visual article {
     position: relative;
     display: grid !important;
@@ -1090,7 +1042,6 @@
     overflow: visible !important;
 }
 
-/* разделительные тонкие линии */
 .about-story__visual article:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -1101,7 +1052,6 @@
     background: linear-gradient(90deg, rgba(18, 58, 90, 0.14), transparent);
 }
 
-/* hover-линия */
 .about-story__visual article::before {
     content: "";
     position: absolute;
@@ -1121,7 +1071,6 @@
     transform-origin: left;
 }
 
-/* иконки как узлы на линии */
 .about-story__visual article>i,
 .about-story__visual article>svg {
     position: relative;
@@ -1162,7 +1111,6 @@
         0 0 0 8px rgba(255, 122, 26, 0.08);
 }
 
-/* текст */
 .about-story__visual article span {
     color: var(--color-text-dark) !important;
     font-size: clamp(1.05rem, 1.45vw, 1.28rem) !important;
@@ -1171,7 +1119,6 @@
     letter-spacing: -0.04em;
 }
 
-/* лёгкий акцент справа, не карточка */
 .about-story__visual article span::after {
     content: "";
     display: block;
@@ -1187,10 +1134,6 @@
     width: 72px;
     background: var(--color-orange);
 }
-
-/* ================================
-   RESPONSIVE
-================================ */
 
 @media (max-width: 1023px) {
     .about-story__visual {
@@ -1236,10 +1179,6 @@
         font-size: 1rem !important;
     }
 }
-
-/* ================================
-   ABOUT MODEL — DARK ROUND HORIZONTAL FLOW
-================================ */
 
 section.about-model#model {
     position: relative;
@@ -1301,7 +1240,6 @@ section.about-model#model .section-heading p {
     color: rgba(199, 208, 216, 0.86) !important;
 }
 
-/* общий горизонтальный путь */
 section.about-model#model .about-model__path {
     position: relative;
     z-index: 3;
@@ -1315,7 +1253,6 @@ section.about-model#model .about-model__path {
     overflow: visible !important;
 }
 
-/* толстая круглая линия за иконками */
 section.about-model#model .about-model__path::before {
     content: "";
     position: absolute;
@@ -1339,7 +1276,6 @@ section.about-model#model .about-model__path::before {
         inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
-/* бегущий блик по линии */
 section.about-model#model .about-model__path::after {
     content: "";
     position: absolute;
@@ -1359,7 +1295,6 @@ section.about-model#model .about-model__path::after {
     pointer-events: none;
 }
 
-/* сами элементы — НЕ карточки */
 section.about-model#model .about-model__path article {
     position: relative;
     z-index: 4;
@@ -1376,14 +1311,12 @@ section.about-model#model .about-model__path article {
     overflow: visible !important;
 }
 
-/* отключаем старые псевдоэлементы, если были */
 section.about-model#model .about-model__path article::before,
 section.about-model#model .about-model__path article::after {
     content: none !important;
     display: none !important;
 }
 
-/* большие круглые иконки */
 section.about-model#model .about-model__path article>i,
 section.about-model#model .about-model__path article>svg {
     position: relative;
@@ -1413,7 +1346,6 @@ section.about-model#model .about-model__path article>svg {
         filter var(--transition-base);
 }
 
-/* круглая аура вокруг активной точки */
 section.about-model#model .about-model__path article:hover>i,
 section.about-model#model .about-model__path article:hover>svg {
     transform: translateY(-8px) scale(1.06);
@@ -1445,7 +1377,6 @@ section.about-model#model .about-model__path p {
     line-height: 1.5 !important;
 }
 
-/* лёгкое смещение, чтобы линия была живее, но без карточек */
 section.about-model#model .about-model__path article:nth-child(2),
 section.about-model#model .about-model__path article:nth-child(4) {
     transform: translateY(18px);
@@ -1470,10 +1401,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
         opacity: 0;
     }
 }
-
-/* ================================
-   TABLET
-================================ */
 
 @media (max-width: 1023px) {
     section.about-model#model .about-model__path {
@@ -1503,10 +1430,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     }
 }
 
-/* ================================
-   MOBILE
-================================ */
-
 @media (max-width: 767px) {
     section.about-model#model {
         padding-top: 50px !important;
@@ -1523,7 +1446,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
         max-width: 520px;
     }
 
-    /* на мобилке делаем вертикальную круглую линию */
     section.about-model#model .about-model__path::before {
         display: block !important;
         left: 43px !important;
@@ -1594,10 +1516,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     }
 }
 
-/* ================================
-   ABOUT MODEL — MOBILE BEAUTIFUL FINAL
-================================ */
-
 @media (max-width: 767px) {
     section.about-model#model {
         padding-top: 48px !important;
@@ -1619,7 +1537,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
         padding: 10px 0 !important;
     }
 
-    /* убираем старую вертикальную толстую линию */
     section.about-model#model .about-model__path::before,
     section.about-model#model .about-model__path::after {
         display: none !important;
@@ -1627,7 +1544,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
         animation: none !important;
     }
 
-    /* каждый пункт = строка, не карточка */
     section.about-model#model .about-model__path article {
         position: relative !important;
         display: grid !important;
@@ -1644,7 +1560,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
         overflow: visible !important;
     }
 
-    /* тонкие разделители */
     section.about-model#model .about-model__path article:not(:last-child)::after {
         content: "" !important;
         position: absolute !important;
@@ -1662,7 +1577,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
                 transparent) !important;
     }
 
-    /* маленькая hover-линия */
     section.about-model#model .about-model__path article::before {
         content: "" !important;
         position: absolute !important;
@@ -1684,7 +1598,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
         transform-origin: left;
     }
 
-    /* иконка справа */
     section.about-model#model .about-model__path article>i,
     section.about-model#model .about-model__path article>svg {
         grid-column: 2 !important;
@@ -1768,10 +1681,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     }
 }
 
-/* ================================
-   ABOUT STORY — WIDER RICH LINE LIST
-================================ */
-
 .about-story__layout {
     display: grid !important;
     grid-template-columns: minmax(0, 0.88fr) minmax(430px, 1.12fr) !important;
@@ -1783,7 +1692,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     max-width: 680px;
 }
 
-/* right side wider, still no cards */
 .about-story__visual {
     position: relative;
     display: grid !important;
@@ -1800,7 +1708,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     overflow: visible !important;
 }
 
-/* vertical accent line */
 .about-story__visual::before {
     content: "";
     position: absolute;
@@ -1818,7 +1725,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
             transparent);
 }
 
-/* list row */
 .about-story__visual article {
     position: relative;
     display: grid !important;
@@ -1834,7 +1740,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     overflow: visible !important;
 }
 
-/* thin separator */
 .about-story__visual article:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -1845,7 +1750,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     background: linear-gradient(90deg, rgba(18, 58, 90, 0.16), transparent);
 }
 
-/* hover orange line */
 .about-story__visual article::before {
     content: "";
     position: absolute;
@@ -1865,7 +1769,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     transform-origin: left;
 }
 
-/* icons */
 .about-story__visual article>i,
 .about-story__visual article>svg {
     position: relative;
@@ -1906,7 +1809,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
         0 0 0 8px rgba(255, 122, 26, 0.08);
 }
 
-/* text group */
 .about-story__visual article div {
     min-width: 0;
 }
@@ -1929,7 +1831,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     line-height: 1.55 !important;
 }
 
-/* small underline under title */
 .about-story__visual article span::after {
     content: "";
     display: block;
@@ -1947,10 +1848,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     width: 92px;
     background: var(--color-orange);
 }
-
-/* ================================
-   RESPONSIVE
-================================ */
 
 @media (max-width: 1023px) {
     .about-story__layout {
@@ -2016,10 +1913,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
         margin-top: 8px;
     }
 }
-
-/* ================================
-   ABOUT QUESTIONS — BUBBLE FAQ
-================================ */
 
 .about-questions {
     position: relative;
@@ -2148,8 +2041,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     line-height: 1.62;
 }
 
-/* bubble FAQ */
-
 .about-questions__items {
     display: grid;
     gap: 12px;
@@ -2240,10 +2131,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     font-size: 14px;
     line-height: 1.58;
 }
-
-/* ================================
-   RESPONSIVE
-================================ */
 
 @media (max-width: 1023px) {
     .about-questions__layout {
@@ -2341,11 +2228,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     }
 }
 
-/* ================================
-   ABOUT QUESTIONS — OPEN ANSWER FIX
-================================ */
-
-/* сам открытый вопрос становится цельным bubble-блоком */
 .about-question[open] {
     border-radius: 30px !important;
     background:
@@ -2357,7 +2239,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
         inset 0 1px 0 rgba(255, 255, 255, 0.96) !important;
 }
 
-/* у открытого summary убираем ощущение отдельной таблетки */
 .about-question[open] summary {
     border-color: rgba(255, 122, 26, 0.34) !important;
     border-bottom-color: transparent !important;
@@ -2366,7 +2247,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     box-shadow: none !important;
 }
 
-/* сам ответ теперь визуально приклеен к вопросу */
 .about-question[open]>p {
     position: relative;
     margin: -4px 0 0 !important;
@@ -2377,7 +2257,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
     background: transparent !important;
 }
 
-/* маленькая акцентная линия перед ответом */
 .about-question[open]>p::before {
     content: "";
     position: absolute;
@@ -2392,12 +2271,10 @@ section.about-model#model .about-model__path article:nth-child(4) {
             rgba(255, 122, 26, 0.18));
 }
 
-/* текст ответа отодвигаем от акцентной линии */
 .about-question[open]>p {
     padding-left: 46px !important;
 }
 
-/* плюсик при открытии выглядит активнее */
 .about-question[open] summary>i,
 .about-question[open] summary>svg {
     transform: rotate(45deg) scale(1.04) !important;
@@ -2409,19 +2286,13 @@ section.about-model#model .about-model__path article:nth-child(4) {
         0 0 0 6px rgba(255, 122, 26, 0.08) !important;
 }
 
-/* чтобы между открытыми вопросами было чуть больше воздуха */
 .about-question[open] {
     margin-block: 4px !important;
 }
 
-/* hover не должен ломать открытый вид */
 .about-question[open] summary:hover {
     background: transparent !important;
 }
-
-/* ================================
-   MOBILE
-================================ */
 
 @media (max-width: 767px) {
     .about-question[open] {
@@ -2446,10 +2317,6 @@ section.about-model#model .about-model__path article:nth-child(4) {
         width: 3px;
     }
 }
-/* ================================
-   ABOUT QUESTIONS — SOFT ANSWER APPEAR
-================================ */
-
 .about-question>p {
     animation: faqBubbleOpen 260ms ease both;
 }
